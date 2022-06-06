@@ -8,4 +8,23 @@ The purpose of our project is to analyze a set of images related to Electronic W
 
 The inputs were obtained by taking photos of the Scrap / Waste Disposal operation of a large IT company, which allowed us to get a variety of electronic waste images, like Printed Circuit Boards, Connectors, Cables and Wires, Batteries, Screens, Magnetic Tapes, Metals, etc.
 
+# Examples:
+
+## Battery
+<img src="https://github.com/mecai-usp/img-processing-2022/blob/main/images/Battery100.jpg" width="300">
+
+## Cable
+<img src="https://github.com/mecai-usp/img-processing-2022/blob/main/images/Cable%20and%20Wire41.jpg" width="300">
+
+## Connector
+<img src="https://github.com/mecai-usp/img-processing-2022/blob/main/images/Connector4.jpg" width="300">
+
+## Magnetic Tape
+<img src="https://github.com/mecai-usp/img-processing-2022/blob/main/images/Magnetic%20Tape8.jpg" width="300">
+
+## Printed Circuit Board
+<img src="https://github.com/mecai-usp/img-processing-2022/blob/main/images/PCB30.jpg" width="300">
+
+## Screen
+<img src="https://github.com/mecai-usp/img-processing-2022/blob/main/images/Tubes%20and%20Screens20.jpg" width="300">
 
