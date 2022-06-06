@@ -1,5 +1,5 @@
-### Gustavo Contini Torres - Nro USP
-### Jose Alexandre F Silva - Nro USP 
+#### Gustavo Contini Torres - Nro USP
+#### Jose Alexandre F Silva - Nro USP 11908649
 #
 # Project Title: Feature Extraction Analysis on Electronic Waste
 #
