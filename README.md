@@ -26,5 +26,5 @@ The inputs were obtained by taking photos of the Scrap / Waste Disposal operatio
 <img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/images/Printed%20Circuit%20Board139.JPG" width="300">
 
 ## Screen
-<img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/images/Tubes%20and%20Screens20.jpg" width="300">
+<img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/images/Tubes%20and%20Screens33.jpg" width="300">
 
