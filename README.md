@@ -11,7 +11,7 @@ The inputs were obtained by taking photos of the Scrap / Waste Disposal operatio
 # Examples:
 
 ## Battery
-<img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/images/Battery100.jpg" width="300">
+<img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/waste_images/Battery100.JPG" width="300">
 
 ## Cable
 <img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/images/Cable%20and%20Wire41.jpg" width="300">
