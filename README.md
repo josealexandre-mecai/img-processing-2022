@@ -11,20 +11,20 @@ The inputs were obtained by taking photos of the Scrap / Waste Disposal operatio
 # Examples:
 
 ## Battery
-<img src="https://github.com/mecai-usp/img-processing-2022/blob/main/images/Battery100.jpg" width="300">
+<img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/images/Battery100.jpg" width="300">
 
 ## Cable
-<img src="https://github.com/mecai-usp/img-processing-2022/blob/main/images/Cable%20and%20Wire41.jpg" width="300">
+<img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/images/Cable%20and%20Wire41.jpg" width="300">
 
 ## Connector
-<img src="https://github.com/mecai-usp/img-processing-2022/blob/main/images/Connector4.jpg" width="300">
+<img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/images/Connector4.jpg" width="300">
 
 ## Magnetic Tape
-<img src="https://github.com/mecai-usp/img-processing-2022/blob/main/images/Magnetic%20Tape8.jpg" width="300">
+<img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/images/Magnetic%20Tape8.jpg" width="300">
 
 ## Printed Circuit Board
-<img src="https://github.com/mecai-usp/img-processing-2022/blob/main/images/PCB30.jpg" width="300">
+<img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/images/Printed%20Circuit%20Board139.JPG" width="300">
 
 ## Screen
-<img src="https://github.com/mecai-usp/img-processing-2022/blob/main/images/Tubes%20and%20Screens20.jpg" width="300">
+<img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/images/Tube%20and%20Screen33.JPG" width="300">
 
