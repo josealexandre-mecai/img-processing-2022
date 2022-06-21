@@ -21,7 +21,7 @@ GLCM is a statistical method of examining texture that considers the spatial rel
 
 LBP is a texture descriptor used for the property of high discrimination power. LBP labels each pixel in an image by comparing the gray level with the neighboring pixels and then assigning a binary number. A value of unity is assigned to the neighbors with gray level greater than the center pixel in a predefined patch, otherwise a value of zero. A binary number is then obtained and assigned to the center pixel.
 
-In order to interpret the results, we will apply Distance Functions (Euclidean, Cosine, Manhattan) and Multidimensional Projection (t-SNE, MDS or PCA). Also, the idea is to define a Bag of Visual Words for content-based image retrieval in order to identify the best combination of features.
+For the analysis and interpretation of the results, we will apply Distance Functions (Euclidean, Cosine, Manhattan) and Multidimensional Projection (t-SNE, MDS or PCA). Also, the idea is to define a Bag of Visual Words for content-based image retrieval in order to identify the best combination of features.
 
 # 4. Initital Code (testing basic functions): 
 https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Feature%20Extraction%20Analysis%20on%20Electronic%20Waste.ipynb
