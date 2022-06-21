@@ -14,7 +14,7 @@ Analyze a set of images related to Electronic Waste by extracting Texture Featur
 # 2. Description of the Input Images:
 As shown in the examples below, the images refer to Electronic Waste (Printed Circuit Boards, Connectors, Cables and Wires, Batteries, Screens, Magnetic Tapes, Metals, etc.) and they were obtained by taking photos of the Scrap / Waste Disposal operation of a large IT company. 
 
-# 3. Description of the Steps to reach the Objetive:
+# 3. Description of the Steps to reach the Objective:
 In order to extract the features, we will work with Gray-Level Co-Occurrence Matrix (GLCM) and LBP (Local Binary Patterns). 
 
 GLCM is a statistical method of examining texture that considers the spatial relationship of pixels in the Gray-Level Co-Occurrence matrix, also known as the gray-level spatial dependence matrix. The GLCM functions characterize the texture of an image by calculating how often pairs of pixel with specific values and in a specified spatial relationship occur in an image, creating a GLCM, and then extracting statistical measures from this matrix.
