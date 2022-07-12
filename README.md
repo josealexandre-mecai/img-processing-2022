@@ -15,11 +15,13 @@ Analyze a set of images related to Electronic Waste by extracting Texture Featur
 As shown in the examples below, the images refer to Electronic Waste (Printed Circuit Boards, Connectors, Cables and Wires, Batteries, Screens, Magnetic Tapes, Metals, etc.) and they were obtained by taking photos of the Scrap / Waste Disposal operation of a large IT company. 
 
 # 3. Description of the Steps to reach the Objective:
-In order to extract the features, we will work with Gray-Level Co-Occurrence Matrix (GLCM) and LBP (Local Binary Patterns). 
+We will work with three feature extraction methods: Gray-Level Co-Occurrence Matrix (GLCM), Local Binary Patterns (LBP) and Binary Robust Invariant Scalable Keypoints (BRISK).
 
 GLCM is a statistical method of examining texture that considers the spatial relationship of pixels in the Gray-Level Co-Occurrence matrix, also known as the gray-level spatial dependence matrix. The GLCM functions characterize the texture of an image by calculating how often pairs of pixel with specific values and in a specified spatial relationship occur in an image, creating a GLCM, and then extracting statistical measures from this matrix.
 
 LBP is a texture descriptor used for the property of high discrimination power. LBP labels each pixel in an image by comparing the gray level with the neighboring pixels and then assigning a binary number. A value of unity is assigned to the neighbors with gray level greater than the center pixel in a predefined patch, otherwise a value of zero. A binary number is then obtained and assigned to the center pixel.
+
+BRISK is a feature point detection and description algorithm with scale and rotation invariance. It constructs the feature descriptor of the local image through the gray scale relationship of random point pairs in the neighborhood of the local image, and obtains the binary feature descriptor.
 
 For the analysis and interpretation of the results, we will apply Distance Functions (Euclidean, Cosine, Manhattan) and Multidimensional Projection (t-SNE, MDS or PCA). Also, the idea is to define a Bag of Visual Words for content-based image retrieval in order to identify the best combination of features.
 
