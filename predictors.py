@@ -7,7 +7,6 @@ import joblib as jb
 # Importing Image class from PIL package
 from PIL import Image
 
-
 # Importing metrics tools
 from sklearn.metrics import confusion_matrix, accuracy_score, ConfusionMatrixDisplay
 
@@ -232,26 +231,61 @@ def lbp_predictor(image_path, option):
 
     return prediction, probabilities
 
+def prob_graph(prob_brisk, prob_glcm, prob_lbp):
 
-def main(im_path, opt):
+    names = list(prob_brisk.keys())
 
-    prediction_brisk = brisk_predictor(im_path, opt)[0]
-    probabilities_brisk = brisk_predictor(im_path, opt)[1]
+    values_list=[]
+    values_list.append(list(prob_brisk.values()))
+    values_list.append(list(prob_glcm.values()))
+    values_list.append(list(prob_lbp.values()))
+    values_list = [[100 * i for i in inner] for inner in values_list]
 
-    print("Prediction BRISK :\n", prediction_brisk, "\n")
-    print("Probabilities BRISK: \n", probabilities_brisk, "\n")
+    fig, (axs) = plt.subplots(1, 3, figsize=(20, 4))
 
-    prediction_glcm = glcm_predictor(im_path, opt)[0]
-    probabilities_glcm = glcm_predictor(im_path, opt)[1]
+    for values, i in zip(values_list, range(len(values_list))):
+        norm = plt.Normalize(0, max(values))
+        colors = plt.cm.Purples(norm(values))
 
-    print("Prediction GLCM :\n", prediction_glcm, "\n")
-    print("Probabilities GLCM: \n", probabilities_glcm, "\n")
+        if i==0:
+            title = 'BRISK'
+        elif i==1:
+            title = 'GLCM'
+        elif i==2:
+            title = 'LBP'
 
-    prediction_lbp = lbp_predictor(im_path, opt)[0]
-    probabilities_lbp = lbp_predictor(im_path, opt)[1]
+        axs[i].bar(range(len(values)), values, tick_label=names, color=colors)
+        axs[i].set_title(title + ' - Class Probabilities - %')
+        axs[i].set_xticklabels(names, rotation=90, ha='right')
+        axs[i].set_ylim(0, 100)
 
-    print("Prediction LBP :\n", prediction_lbp, "\n")
-    print("Probabilities LBP: \n", probabilities_lbp, "\n")
+        for p in axs[i].patches:
+            axs[i].annotate(str(round(p.get_height(), 1)), (p.get_x() * 1.001, p.get_height() * 1.07), color='black')
+
+    plt.show()
+
+
+def predict(im_path, opt):
+
+    pred_brisk = brisk_predictor(im_path, opt)[0]
+    prob_brisk = brisk_predictor(im_path, opt)[1]
+
+    print("Prediction BRISK: ", pred_brisk, "\n")
+    print("Probabilities BRISK:\n", prob_brisk, "\n")
+
+    pred_glcm = glcm_predictor(im_path, opt)[0]
+    prob_glcm = glcm_predictor(im_path, opt)[1]
+
+    print("Prediction GLCM: ", pred_glcm, "\n")
+    print("Probabilities GLCM: \n", prob_glcm, "\n")
+
+    pred_lbp = lbp_predictor(im_path, opt)[0]
+    prob_lbp = lbp_predictor(im_path, opt)[1]
+
+    print("Prediction LBP: ", pred_lbp, "\n")
+    print("Probabilities LBP: \n", prob_lbp, "\n")
+
+    prob_graph(prob_brisk, prob_glcm, prob_lbp)
 
 
 # Using the special variable __name__
