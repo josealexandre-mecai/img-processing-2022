@@ -75,4 +75,4 @@ https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Showcase%20
 
 # 7. Presentation
 
-The video presentation of this project can be viwed at: YouTube link.
+The video presentation of this project can be viewed at: YouTube link.
