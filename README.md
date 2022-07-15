@@ -3,18 +3,18 @@
 #
 # Project Title: Feature Extraction Analysis on Electronic Waste
 #
-# Abstract: 
+# Abstract
 The purpose of this project is to analyze a set of images related to Electronic Waste, by working with Feature Extraction techniques, namely: Binary Robust Invariant Scalable Keypoints (BRISK), Gray Level Co-occurrence Matrix (GLCM) Haralick Features and Local Binary Patterns (LBP). Then the extracted filters will be clustered and Multidimensional Projections (PCA and t-SNE) are applied to produce point cloud charts in the attempt to visually interpret the descriptors obtained. In addition, a Bag of Visual Words will be defined and used as input for image classification and content-based image retrieval.
 
 This procedure is repeated to synthetic images created by data augmentation and background/foreground segmentantion methods. Finally, we compare the accuracy of the classification models developed for each combination of image dataset and feature extraction technique. Also, we comment on the results and interpretaion of image retrieval, closing this report with our understanding of the lessons learned from this project.
 
 The inputs were obtained by taking photos of the Scrap / Waste Disposal operation of a large IT company, which allowed us to get a variety of electronic waste images, like Printed Circuit Boards, Connectors, Cables and Wires, Batteries, Screens, Magnetic Tapes, Metals, etc.
 
-# 1. Main Objective: 
-Analyze a set of images related to Electronic Waste by extracting Texture Features and then interpreting the results to evaluate the best combinations.
+# 1. Main Objective
+Analyze a set of images related to Electronic Waste by extracting Texture Features and then using these features in two tasks: image classification and image retrieval.
 
 # 2. Description of the Input Images:
-As shown in the examples below, the images refer to Electronic Waste (Printed Circuit Boards, Connectors, Cables and Wires, Batteries, Screens, Magnetic Tapes, Metals, etc.) and they were obtained by taking photos of the Scrap / Waste Disposal operation of a large IT company. 
+As shown in the examples below, the images refer to Electronic Waste (Printed Circuit Boards, Connectors, Cables and Wires, Batteries, Screens, Magnetic Tapes, Metals, etc.) and they were obtained by taking photos of the Scrap / Waste Disposal operation of a large IT company. Given the main objective of the project and the methods chosen, we don't propose the production of output images. In the other hand, we apply dimension reduction techniques and plot point cloud charts to try to create a visualization of the features extracted from the images.
 
 # 3. Description of the Steps to reach the Objective:
 We will work with three feature extraction methods: Gray-Level Co-Occurrence Matrix (GLCM), Local Binary Patterns (LBP) and Binary Robust Invariant Scalable Keypoints (BRISK).
