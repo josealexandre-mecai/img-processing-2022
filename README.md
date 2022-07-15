@@ -63,6 +63,16 @@ Finally, we combined these two techniques and created the third dataset of new s
 
 # 4. Obtained Results and Discussion
 
+# 5. Descriptions of the roles of the student in the project
 
-https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Feature%20Extraction%20Analysis%20on%20Electronic%20Waste.ipynb
+José was resposible for...
+Meanwhile, Gustavo was responsible for: the Clustering and Silhouette Score applications, the Multidimensional Projections and point clouds plotting, the cross-validation training procedure for the machine learning models and writing the final report.
 
+# 6. Demo of the project
+
+Please follow and run the following notebook:
+https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Showcase%20Predictors.ipynb
+
+# 7. Presentation
+
+The video presentation of this project can be viwed at: YouTube link.
