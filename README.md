@@ -4,7 +4,9 @@
 # Project Title: Feature Extraction Analysis on Electronic Waste
 #
 # Abstract: 
-The purpose of our project is to analyze a set of images related to Electronic Waste, by working with Feature Extraction techniques such as GLCM and LBP, and then interpreting the results based on Distance Functions (Euclidean, Cosine, Manhattan) and Multidimensional Projection (t-SNE, MDS or PCA). In addition, with the application of a clustering algorithm, we will define a Bag of Visual Words for image classification and content-based image retrieval in order to identify the best combination of features.
+The purpose of this project is to analyze a set of images related to Electronic Waste, by working with Feature Extraction techniques, namely: Binary Robust Invariant Scalable Keypoints (BRISK), Gray Level Co-occurrence Matrix (GLCM) Haralick Features and Local Binary Patterns (LBP). Then the extracted filters will be clustered and Multidimensional Projections (PCA and t-SNE) are applied to produce point cloud charts in the attempt to visually interpret the descriptors obtained. In addition, a Bag of Visual Words will be defined and used as input for image classification and content-based image retrieval.
+
+This procedure is repeated to synthetic images created by data augmentation and background/foreground segmentantion methods. Finally, we compare the accuracy of the classification models developed for each combination of image dataset and feature extraction technique. Also, we comment on the results and interpretaion of image retrieval, closing this report with our understanding of the lessons learned from this project.
 
 The inputs were obtained by taking photos of the Scrap / Waste Disposal operation of a large IT company, which allowed us to get a variety of electronic waste images, like Printed Circuit Boards, Connectors, Cables and Wires, Batteries, Screens, Magnetic Tapes, Metals, etc.
 
