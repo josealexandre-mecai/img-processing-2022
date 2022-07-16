@@ -77,6 +77,8 @@ To exemplify the outputs produced by the data augmentation and background/foregr
 
 Generally speaking, the use of the U2-Net Neural Network produced good object detection and highlighting. Results can be viewed at https://github.com/josealexandre-mecai/img-processing-2022/tree/main/waste_images/train_segmented.
 
+As mentioned in the previous section, we tested various sizes of clusters in a range from 25 to 1,000. Since many of the extracted descriptors generated hundreds of thousands of data, we decided to apply a random sample from each dataset and then proceed with the clustering in order to facilitate the execution of this step. All combinations of feature extraction methods and datasets presented better results for k=25 clusters. The Silhoutte Scores are displayed in the table below.
+
 #### Silhouette Scores for k=25
 |      |Original  |Balanced  |Segmented |Balanc+Seg|
 |------|----------|----------|----------|----------|
@@ -84,18 +86,35 @@ Generally speaking, the use of the U2-Net Neural Network produced good object de
 |GLCM  |0.49      |0.54      |0.52      |0.55      |
 |LBP   |-0.02     |-0.02     |0.24      |0.25      |
 
+Note that GLCM produced the best cluster segmentations, since the closer to one the silhouette score gets, the better. Also, balancing and highlighting the objects in the images improved the cluster segmentation for GLCM descriptors. Brisk's descriptors cluster segmentation showed to be indifferent to the image set. As for the LBP descriptors, the background/foreground segmentation caused great impact in the cluster segmentation.
+
+The following set of images show 2D point cloud charts for the two main components obtained from PCA applied to the descriptors obtained from the three methods and images sets.
+
+#### PCA two components point cloud for BRISK descriptors applied to the original, balanced, segmented and balanced-segmented image sets, respectively
 <img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/PCA_BRISK_normal-data.png" width="250"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/PCA_BRISK_balanced-data.png" width="250"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/PCA_BRISK_segmented-data.png" width="250"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/PCA_BRISK_balanced-segmented-data.png" width="250">
 
+
+#### PCA two components point cloud for GLCM descriptors applied to the original, balanced, segmented and balanced-segmented image sets, respectively
 <img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/PCA_GLCM_normal-data.png" width="250"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/PCA_GLCM_balanced-data.png" width="250"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/PCA_GLCM_segmented-data.png" width="250"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/PCA_GLCM_balanced-segmented-data.png" width="250">
 
+
+#### PCA two components point cloud for LBP descriptors applied to the original, balanced, segmented and balanced-segmented image sets, respectively
 <img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/PCA_LBP_normal-data.png" width="250"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/PCA_LBP_balanced-data.png" width="250"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/PCA_LBP_segmented-data.png" width="250"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/PCA_LBP_balanced-segmented-data.png" width="250">
 
+
+#### t-SNE two components point cloud for BRISK descriptors applied to the original, balanced, segmented and balanced-segmented image sets, respectively
 <img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/t-SNE_BRISK_normal-data.png" width="230"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/t-SNE_BRISK_balanced-data.png" width="230"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/t-SNE_BRISK_segmented-data.png" width="275"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/t-SNE_BRISK_balanced-segmented-data.png" width="275">
 
+
+#### t-SNE two components point cloud for GLCM descriptors applied to the original, balanced, segmented and balanced-segmented image sets, respectively
 <img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/t-SNE_GLCM_normal-data.png" width="230"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/t-SNE_GLCM_balanced-data.png" width="230"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/t-SNE_GLCM_segmented-data.png" width="275"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/t-SNE_GLCM_balanced-segmented-data.png" width="275">
 
+
+#### t-SNE two components point cloud for LBP descriptors applied to the original, balanced, segmented and balanced-segmented image sets, respectively
 <img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/t-SNE_LBP_normal-data.png" width="230"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/t-SNE_LBP_balanced-data.png" width="230"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/t-SNE_LBP_segmented-data.png" width="275"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/t-SNE_LBP_balanced-segmented-data.png" width="275">
 
+
+The four tables below present the mean accuracy results of the 5-fold cross-validation training. The best model for each feature extraction method is highlighted in __bold__.
 
 #### Original image set         
 |Model   | BRISK    | GLCM     | LBP      |
