@@ -124,7 +124,7 @@ The two components extracted by the t-SNE method show a clear change the in the 
 
 ### Image Features used as input in Machine Learning - Training Results
 
-The four tables below present the mean accuracy results of the 5-fold cross-validation training. The best model for each feature extraction method is highlighted in __bold__.
+The four tables below present the mean accuracy results of the 5-fold cross-validation training. The best model for each feature extraction method is highlighted in __bold__. Random Forest is the algorithm that most frequently produced better results, with 8 models being selected. We also have one Logistic Regression, one Support Vector Machines, one Decision Tree and one eXtreme Gradient Boosting. These selected models were used to train the datasets and then were used to predict the classes of a new set of un-seen images.
 
 #### Original image set         
 |Model   | BRISK    | GLCM     | LBP      |
@@ -166,6 +166,12 @@ The four tables below present the mean accuracy results of the 5-fold cross-vali
 |Rand For|__0.2946__|__0.1244__|0.1466    |    
 |XGBoost |0.2425    |0.1163    |__0.1634__|
 
+### Image Features used as input in Machine Learning - Training Results
+
+Next we present the results of the overall accuracy for the predictions made by the models and highglight in __bold__ the best results for each image set. The Random Forest model fed by the features extracted by the LBP got the best overall accuracy for the Original image set. BRISK features got the best overall accuracy for the Balanced, Segmented and Balanced/Segmented image sets, using the Random Forest model for them all.
+
+BRISK is the method that showed overall best accuracy results considering all the image sets. It also was the less affected by the reduction in the accuracy caused by the class balancing. Segmenting the object from the background produced great increase in the GLCM accuracy.
+
 #### Predictions accuracy in the test dataset
 |      |Original  |Balanced  |Segmented |Balanc+Seg|
 |------|----------|----------|----------|----------|
@@ -173,31 +179,46 @@ The four tables below present the mean accuracy results of the 5-fold cross-vali
 |GLCM  |0.28      |0.16      |0.37      |0.11      |
 |LBP   |__0.40__  |0.21      |0.36      |0.20      |
 
+Now we present the Confusion Matrixes obtained from the predictions using the machine learing models for each combination of feature extraction method and image set.
 
+#### BRISK features Confusion Matrix for the Original and Balanced image sets.
 <img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/CM_BRISK_original-data.png" width="400"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/CM_BRISK_balanced-data.png" width="400">
 
+#### BRISK features Confusion Matrix for the Segmented and Balanced-Segmented image sets.
 <img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/CM_BRISK_segmented-data.png" width="400"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/CM_BRISK_balanced-segmented-data.png" width="400">
 
+#### GLCM features Confusion Matrix for the Original and Balanced image sets.
 <img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/CM_GLCM_original-data.png" width="400"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/CM_GLCM_balanced-data.png" width="400">
 
+#### GLCM features Confusion Matrix for the Segmented and Balanced-Segmented image sets.
 <img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/CM_GLCM_segmented-data.png" width="400"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/CM_GLCM_balanced-segmented-data.png" width="400">
 
+#### LBP features Confusion Matrix for the Original and Balanced image sets.
 <img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/CM_LBP_original-data.png" width="400"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/CM_LBP_balanced-data.png" width="400">
 
+#### LBP features Confusion Matrix for the Segmented and Balanced-Segmented image sets.
 <img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/CM_LBP_segmented-data.png" width="400"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/CM_LBP_balanced-segmented-data.png" width="400">
 
+We also present barplots showing the accuracy for each class individually.
 
+#### BRISK features individual accuracy for the Original and Balanced image sets.
 <img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/class_acc_BRISK_original-data.png" width="400"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/class_acc_BRISK_balanced-data.png" width="400">
 
+#### BRISK features individual accuracy for the Segmented and Balanced-Segmented image sets.
 <img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/class_acc_BRISK_segmented-data.png" width="400"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/class_acc_BRISK_balanced-segmented-data.png" width="400">
 
+#### GLCM features individual accuracy for the Original and Balanced image sets.
 <img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/class_acc_GLCM_original-data.png" width="400"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/class_acc_GLCM_balanced-data.png" width="400">
 
+#### GLCM features individual accuracy for the Segmented and Balanced-Segmented image sets.
 <img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/class_acc_GLCM_segmented-data.png" width="400"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/class_acc_GLCM_balanced-segmented-data.png" width="400">
 
+#### LBP features individual accuracy for the Original and Balanced image sets.
 <img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/class_acc_LBP_original-data.png" width="400"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/class_acc_LBP_balanced-data.png" width="400">
 
+#### LBP features individual accuracy for the Segmented and Balanced-Segmented image sets.
 <img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/class_acc_LBP_segmented-data.png" width="400"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/class_acc_LBP_segmented-data.png" width="400">
+
 
 
 # 5. Descriptions of the roles of the student in the project
