@@ -80,7 +80,7 @@ Generally speaking, the use of the U2-Net Neural Network produced good object de
 #### Silhouette Scores for k=25
 |      |Original  |Balanced  |Segmented |Balanc+Seg|
 |------|----------|----------|----------|----------|
-|BRISK |0.30      |0.3       |0.30      |0.30      |
+|BRISK |0.30      |0.30      |0.30      |0.30      |
 |GLCM  |0.49      |0.54      |0.52      |0.55      |
 |LBP   |-0.02     |-0.02     |0.24      |0.25      |
 
@@ -135,7 +135,14 @@ Generally speaking, the use of the U2-Net Neural Network produced good object de
 |SVM     |0.1202    |0.1223    |0.1217    |    
 |Dec Tree|0.1683    |0.1143    |0.0963    |    
 |Rand For|__0.2946__|__0.1244__|0.1466    |    
-|XGBoost |0.2425    |0.1163    |__0.1634__|    
+|XGBoost |0.2425    |0.1163    |__0.1634__|
+
+#### Predictions accuracy in the test dataset
+|      |Original  |Balanced  |Segmented |Balanc+Seg|
+|------|----------|----------|----------|----------|
+|BRISK |0.38      |__0.27__  |__0.40__  |__0.30__  |
+|GLCM  |0.28      |0.16      |0.37      |0.11      |
+|LBP   |__0.40__  |0.21      |0.36      |0.20      |
    
 # 5. Descriptions of the roles of the student in the project
 
