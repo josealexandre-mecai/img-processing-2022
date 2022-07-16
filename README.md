@@ -56,8 +56,11 @@ We then trained the best model for each set of features (extracted by the three 
 The whole procedure of extracting the features, clustering and visualizing their descriptors, as well as training machine learning models to predict the classes of new images, was replicated to 4 sets of images, as describred below:
 
 1 - Imbalanced dataset, including the original images with background
+
 2 - Imbalanced dataset, including the images after background segmentation
+
 3 - Balanced dtaaset, including the original images with background
+
 4 - Balanced dataset, including the images after background segmentation
 
 The balanced dataset was obtained with the application of a data augmentation technique provided by the Keras package on TensorFlow platform. With the objective of balancing the number of elements in each class, we created new images by applying small variations, such as width and height changes, 90 degrees rotation, brigthness adjustments and horizontal flip.
