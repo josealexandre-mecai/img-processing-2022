@@ -78,15 +78,46 @@ To exemplify the outputs produced by the data augmentation and background/foregr
 
 Generally speaking, the use of the U2-Net Neural Network produced good object detection and highlighting. Results can be viewed at https://github.com/josealexandre-mecai/img-processing-2022/tree/main/waste_images/train_segmented.
 
-|        |BRISK  - GLCM - LBP  |
-|--------|---------------------|
-|Logistic|0.3486 -             |
-|MLP     |0.2555 -             |
-|SVM     |0.3047 -             |
-|Dec Tree|0.2646 -             |
-|Rand For|0.3650 -             |
-|XGBoost |0.3486 -             |
+#### Original image set         
+|Model   | BRISK    | GLCM     | LBP      |
+|--------|----------|----------|----------|
+|Logistic|__0.3965__|0.3080    |0.3486    |
+|MLP     |0.3310    |0.3027    |0.2556    |
+|SVM     |0.3398    |__0.3115__|0.3047    |
+|Dec Tree|0.3398    |0.2850    |0.2646    |
+|Rand For|0.3929    |0.3062    |__0.3650__|
+|XGBoost |0.3858    |0.2973    |0.3486    |
 
+#### Balanced image set         
+|Model   | BRISK    | GLCM     | LBP      |
+|--------|----------|----------|----------|
+|Logistic|0.2546    |0.1103    |0.1606    |
+|MLP     |0.2626    |0.1183    |0.1255    |
+|SVM     |0.1603    |0.1082    |0.1070    |
+|Dec Tree|0.1804    |0.1063    |0.1502    |
+|Rand For|__0.2826__|__0.1323__|__0.1852__|
+|XGBoost |0.2547    |0.1162    |0.1461    |
+
+#### Segmented image set         
+|Model   | BRISK    | GLCM     | LBP      |
+|--------|----------|----------|----------|
+|Logistic|0.3681    |0.2761    |0.2793    |
+|MLP     |0.3062    |0.2726    |0.2063    |
+|SVM     |0.3115    |0.2779    |0.3047    |
+|Dec Tree|0.3168    |__0.2850__|0.2007    |
+|Rand For|__0.4000__|0.2779    |__0.3230__|
+|XGBoost |0.3912    |0.2761    |0.2573    |
+
+#### Balanced and Segmented image set         
+|Model   | BRISK    | GLCM     | LBP      |
+|--------|----------|----------|----------|
+|Logistic|0.2426    |0.1062    |0.1550    |
+|MLP     |0.2225    |0.1082    |0.1383    |    
+|SVM     |0.1202    |0.1223    |0.1217    |    
+|Dec Tree|0.1683    |0.1143    |0.0963    |    
+|Rand For|__0.2946__|__0.1244__|0.1466    |    
+|XGBoost |0.2425    |0.1163    |__0.1634__|    
+   
 # 5. Descriptions of the roles of the student in the project
 
 José was resposible for...
