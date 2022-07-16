@@ -77,6 +77,8 @@ To exemplify the outputs produced by the data augmentation and background/foregr
 
 Generally speaking, the use of the U2-Net Neural Network produced good object detection and highlighting. Results can be viewed at https://github.com/josealexandre-mecai/img-processing-2022/tree/main/waste_images/train_segmented.
 
+### Clustering and Multidimensional Projections Visualizations
+
 As mentioned in the previous section, we tested various sizes of clusters in a range from 25 to 1,000. Since many of the extracted descriptors generated hundreds of thousands of data, we decided to apply a random sample from each dataset and then proceed with the clustering in order to facilitate the execution of this step. All combinations of feature extraction methods and datasets presented better results for k=25 clusters. The Silhoutte Scores are displayed in the table below.
 
 #### Silhouette Scores for k=25
@@ -93,26 +95,34 @@ The following set of images show 2D point cloud charts for the two main componen
 #### PCA two components point cloud for BRISK descriptors applied to the original, balanced, segmented and balanced-segmented image sets, respectively
 <img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/PCA_BRISK_normal-data.png" width="250"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/PCA_BRISK_balanced-data.png" width="250"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/PCA_BRISK_segmented-data.png" width="250"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/PCA_BRISK_balanced-segmented-data.png" width="250">
 
+The charts above show a coarse segmentation, as a reflection of the low Silhouette Scores and, also from the fact that the two main components explain only around 16% of the variance for all the image sets.
 
 #### PCA two components point cloud for GLCM descriptors applied to the original, balanced, segmented and balanced-segmented image sets, respectively
 <img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/PCA_GLCM_normal-data.png" width="250"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/PCA_GLCM_balanced-data.png" width="250"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/PCA_GLCM_segmented-data.png" width="250"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/PCA_GLCM_balanced-segmented-data.png" width="250">
 
+GLCM got better cluster segregation (Silhouette Score near 0.5) and presented an interesting pattern for the descriptors data.
 
 #### PCA two components point cloud for LBP descriptors applied to the original, balanced, segmented and balanced-segmented image sets, respectively
 <img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/PCA_LBP_normal-data.png" width="250"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/PCA_LBP_balanced-data.png" width="250"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/PCA_LBP_segmented-data.png" width="250"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/PCA_LBP_balanced-segmented-data.png" width="250">
 
+The pattern of the LBP descriptors data changed after the object highlighting procedure.
 
 #### t-SNE two components point cloud for BRISK descriptors applied to the original, balanced, segmented and balanced-segmented image sets, respectively
 <img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/t-SNE_BRISK_normal-data.png" width="230"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/t-SNE_BRISK_balanced-data.png" width="230"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/t-SNE_BRISK_segmented-data.png" width="275"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/t-SNE_BRISK_balanced-segmented-data.png" width="275">
 
+The two components extracted by the t-SNE method didn't provide good visualization of the BRISJ descriptors' clusters.
 
 #### t-SNE two components point cloud for GLCM descriptors applied to the original, balanced, segmented and balanced-segmented image sets, respectively
 <img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/t-SNE_GLCM_normal-data.png" width="230"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/t-SNE_GLCM_balanced-data.png" width="230"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/t-SNE_GLCM_segmented-data.png" width="275"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/t-SNE_GLCM_balanced-segmented-data.png" width="275">
 
+The GLCM method produced less descriptors to the segmented pictures, that's why we see relatively few points in the chart above. The curious shape also reveals fairly well segmented clusters for all the image sets.
 
 #### t-SNE two components point cloud for LBP descriptors applied to the original, balanced, segmented and balanced-segmented image sets, respectively
 <img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/t-SNE_LBP_normal-data.png" width="230"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/t-SNE_LBP_balanced-data.png" width="230"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/t-SNE_LBP_segmented-data.png" width="275"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/t-SNE_LBP_balanced-segmented-data.png" width="275">
 
+The two components extracted by the t-SNE method show a clear change the in the data pattern after applying the object hightlighting procedure.
+
+### Image Features used as input in Machine Learning - Training Results
 
 The four tables below present the mean accuracy results of the 5-fold cross-validation training. The best model for each feature extraction method is highlighted in __bold__.
 
