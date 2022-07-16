@@ -71,6 +71,15 @@ To exemplify the outputs produced by the data augmentation and background/foregr
 
 Generally speaking, the use of the U2-Net Neural Network produced good object detection and highlighting. Results can be viewed at https://github.com/josealexandre-mecai/img-processing-2022/tree/main/waste_images/train_segmented.
 
+|        |BRISK  - GLCM - LBP  |
+|--------|---------------------|
+|Logistic|0.3486 -             |
+|MLP     |0.2555 -             |
+|SVM     |0.3047 -             |
+|Dec Tree|0.2646 -             |
+|Rand For|0.3650 -             |
+|XGBoost |0.3486 -             |
+
 # 5. Descriptions of the roles of the student in the project
 
 José was resposible for...
