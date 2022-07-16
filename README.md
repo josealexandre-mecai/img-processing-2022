@@ -199,7 +199,7 @@ Now we present the Confusion Matrixes obtained from the predictions using the ma
 #### LBP features Confusion Matrix for the Segmented and Balanced-Segmented image sets.
 <img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/CM_LBP_segmented-data.png" width="400"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/CM_LBP_balanced-segmented-data.png" width="400">
 
-We also present barplots showing the accuracy for each class individually.
+We also present barplots showing the accuracy for each class individually. Note how balancing the datasets raises the individual classes accuracy.
 
 #### BRISK features individual accuracy for the Original and Balanced image sets.
 <img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/class_acc_BRISK_original-data.png" width="400"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/class_acc_BRISK_balanced-data.png" width="400">
@@ -219,7 +219,9 @@ We also present barplots showing the accuracy for each class individually.
 #### LBP features individual accuracy for the Segmented and Balanced-Segmented image sets.
 <img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/class_acc_LBP_segmented-data.png" width="400"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/class_acc_LBP_segmented-data.png" width="400">
 
+## Final Comments
 
+In this projet we applied three feature extraction methods (GLCM, LBP and BRISK) to a set of eletronic waste images and conducted two tasks: image classification and image retrieval. We also applied data augmentation and object salientation to create new synthetic images to compare the results on both tasks to the ones from the oringal image set. For the classification task we used the extracted features as inputs in several machine learning models and trained this models to predict the classes in new images. The best model/feature combination was Random Forest with LBP for the Original image set (40% accuracy), closely followed by the Logistic Regression with BRISK (38%). In general, highlighting the main object produced an increment in the accuracy, specially for the GLCM. Balancing the image sets increased individual classes accuracy, at the cost of overall accuracy reduction.
 
 # 5. Descriptions of the roles of the student in the project
 
