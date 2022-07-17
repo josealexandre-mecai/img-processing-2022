@@ -119,7 +119,7 @@ def lbp_features(img, radius=1, sampling_pixels=8):
         img = (img - i_min) / (i_max - i_min)
 
     # Compute LBP
-    lbp = feature.local_binary_pattern(img, radius, sampling_pixels, method="uniform")
+    lbp = feature.local_binary_pattern(img, sampling_pixels, radius, method="uniform")
 
     # LBP returns a matrix with the codes, so we compute the histogram
     (hist, _) = np.histogram(lbp.ravel(), bins=np.arange(0, sampling_pixels + 3), range=(0, sampling_pixels + 2))
