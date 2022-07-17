@@ -28,6 +28,16 @@ from skimage import feature # feature.local_binary_pattern for LBP calculation
 
 # BRISK - Feature Point Predictor
 def brisk_predictor(image_path, option):
+    '''
+    Predict class based on BRISK features
+
+    Parameters:
+        img_path: path for an image
+        option: dataset option
+
+    Returns:
+        predicted class, probabilities
+    '''
 
     # Read the image
     im = cv2.imread(image_path)
@@ -81,12 +91,32 @@ def brisk_predictor(image_path, option):
 
 
 def extract_glcm_features(image):
+    '''
+    Extract GLCM features
+
+    Parameters:
+        img: image file
+
+    Returns:
+        texture features
+    '''
+
     # Calculate haralick texture features for 4 types of adjacency
     textures = mt.features.haralick(image)
     return textures
 
 
 def glcm_predictor(image_path, option):
+    '''
+    Predict class based on GLCM features
+
+    Parameters:
+        img_path: path for an image
+        option: dataset option
+
+    Returns:
+        predicted class, probabilities
+    '''
 
     # Read the image
     im = cv2.imread(image_path)
@@ -141,6 +171,18 @@ def glcm_predictor(image_path, option):
 
 
 def extract_lbp_features(img, radius=1, sampling_pixels=8):
+    '''
+    Extract LBP features
+
+    Parameters:
+        img: image file
+        radius: radius of circle (spatial resolution of the operator)
+        sampling_pixels: number of circularly symmetric neighbor set points (quantization of the angular space).
+
+    Returns:
+        texture features
+    '''
+
     # LBP operates in single channel images so if RGB images are provided
     # we have to convert it to grayscale
     if (len(img.shape) > 2):
@@ -158,7 +200,7 @@ def extract_lbp_features(img, radius=1, sampling_pixels=8):
         img = (img - i_min) / (i_max - i_min)
 
     # compute LBP
-    lbp = feature.local_binary_pattern(img, sampling_pixels, radius, method="uniform")
+    lbp = feature.local_binary_pattern(img, radius, sampling_pixels, method="uniform")
 
     '''
     # LBP returns a matrix with the codes, so we compute the histogram
@@ -175,6 +217,16 @@ def extract_lbp_features(img, radius=1, sampling_pixels=8):
 
 
 def lbp_predictor(image_path, option):
+    '''
+    Predict class based on LBP features
+
+    Parameters:
+        image_path: path for an image
+        option: dataset option
+
+    Returns:
+        predicted class, probabilities
+    '''
 
     # Read the image
     im = cv2.imread(image_path)
@@ -232,6 +284,17 @@ def lbp_predictor(image_path, option):
     return prediction, probabilities
 
 def prob_graph(prob_brisk, prob_glcm, prob_lbp):
+    '''
+    Generate graph with class probabilities
+
+    Parameters:
+        prob_brisk: list of class probabilities obtained from BRISK prediction
+        prob_glcm: list of class probabilities obtained from GLCM prediction
+        prob_lbp: list of class probabilities obtained from LBP prediction
+
+    Returns:
+        graph with class probabilities
+    '''
 
     names = list(prob_brisk.keys())
 
@@ -266,6 +329,16 @@ def prob_graph(prob_brisk, prob_glcm, prob_lbp):
 
 
 def predict(im_path, opt):
+    '''
+    Predict classes based on BRISK, LBP and GLCM features
+
+    Parameters:
+        im_path: path for an image
+        option: dataset option
+
+    Returns:
+        prints predictions, probabilities and draw graph with class probabilities
+    '''
 
     pred_brisk = brisk_predictor(im_path, opt)[0]
     prob_brisk = brisk_predictor(im_path, opt)[1]
@@ -287,6 +360,3 @@ def predict(im_path, opt):
 
     prob_graph(prob_brisk, prob_glcm, prob_lbp)
 
-# Using the special variable __name__
-#if __name__ == "__main__":
-#    main()

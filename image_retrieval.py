@@ -47,6 +47,17 @@ def get_patches(img_file, random_state, patch_size=(11, 11), n_patches=250):
 
 
 def glcm_features(img, sampling_pixels=8):
+    '''
+    Extract GLCM features
+
+    Parameters:
+        img: image file
+        sampling_pixels: number of circularly symmetric neighbor set points (quantization of the angular space).
+
+    Returns:
+        texture features
+    '''
+
     # Converting to grayscale
     if (len(img.shape) > 2):
         img = img.astype(float)
@@ -79,6 +90,18 @@ def glcm_features(img, sampling_pixels=8):
 
 
 def lbp_features(img, radius=1, sampling_pixels=8):
+    '''
+    Extract LBP features
+
+    Parameters:
+        img: image file
+        radius: radius of circle (spatial resolution of the operator)
+        sampling_pixels: number of circularly symmetric neighbor set points (quantization of the angular space).
+
+    Returns:
+        texture features
+    '''
+
     # LBP operates in single channel images so if RGB images are provided
     # we have to convert it to grayscale
     if (len(img.shape) > 2):
@@ -96,7 +119,7 @@ def lbp_features(img, radius=1, sampling_pixels=8):
         img = (img - i_min) / (i_max - i_min)
 
     # Compute LBP
-    lbp = feature.local_binary_pattern(img, sampling_pixels, radius, method="uniform")
+    lbp = feature.local_binary_pattern(img, radius, sampling_pixels, method="uniform")
 
     # LBP returns a matrix with the codes, so we compute the histogram
     (hist, _) = np.histogram(lbp.ravel(), bins=np.arange(0, sampling_pixels + 3), range=(0, sampling_pixels + 2))
@@ -110,6 +133,18 @@ def lbp_features(img, radius=1, sampling_pixels=8):
 
 
 def retrieve_images(dataset_path, query_path, option, feature_extractor):
+    '''
+    Retrieve content-based images
+
+    Parameters:
+        dataset_path: path to the dataset of images
+        query_path: path to the query image
+        option: dataset option
+        feature_extractor: glcm or lbp
+
+    Returns:
+        graph with nearest images related to the query
+    '''
 
     # Defining list of images from dataset_path
     imgs_path = []
