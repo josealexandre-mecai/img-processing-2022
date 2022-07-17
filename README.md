@@ -4,9 +4,9 @@
 # Project Title: Feature Extraction Analysis on Electronic Waste
 #
 # Abstract
-The purpose of this project is to analyze a set of images related to Electronic Waste by working with Feature Extraction techniques, namely: Binary Robust Invariant Scalable Keypoints (BRISK), Gray Level Co-occurrence Matrix (GLCM) Haralick Features and Local Binary Patterns (LBP). Then, the extracted features were clustered and visually represented with Multidimensional Projections (PCA and t-SNE) to produce point cloud charts for the interpretation of the obtained descriptors. In addition, a Bag of Visual Words was defined and used as input for image classification and content-based retrieval.
+This project aims to analyze a set of images related to Electronic Waste by working with Feature Extraction techniques, namely: Binary Robust Invariant Scalable Keypoints (BRISK), Gray Level Co-occurrence Matrix (GLCM) Haralick Features and Local Binary Patterns (LBP). The extracted features were clustered and visually represented with Multidimensional Projections (PCA and t-SNE) to produce point cloud charts for the interpretation of the obtained descriptors. In addition, a Bag of Visual Words was defined and used as input for image classification and content-based retrieval.
 
-As part of our experiments, we've also applied the aforementioned analysis to an extended version of the dataset, including synthetic images created by data augmentation and background/foreground segmentantion methods. 
+As part of our experiments, we've also applied the aforementioned analysis to extended versions of the dataset, including synthetic images created by data augmentation and background/foreground segmentantion methods. 
 
 In order to draw conclusions and lessons learned from the project, we've compared the accuracy of the classification models developed for each combination of images and features, and also analyzed the results of the image retrieval system.
 
@@ -16,7 +16,11 @@ The inputs were obtained by taking photos of the Scrap / Waste Disposal operatio
 Analyze a set of images related to Electronic Waste by extracting texture and keypoint features and then using these features in two tasks: image classification and image retrieval.
 
 # 2. Description of the Input Images
-As shown in the examples below, the images refer to Electronic Waste (Printed Circuit Boards, Connectors, Cables and Wires, Batteries, Screens, Magnetic Tapes, Metals, etc.) and they were obtained by taking photos of the Scrap / Waste Disposal operation of a large IT company. Given the main objective of the project and the methods chosen, we don't propose the production of output images. On the other hand, we apply dimension reduction techniques and plot point cloud charts to create a visualization of the features extracted from the images.
+As shown in the examples below, the images refer to Electronic Waste (Printed Circuit Boards, Connectors, Cables and Wires, Batteries, Screens, Magnetic Tapes, Metals, etc.) and they were obtained by taking photos of the Scrap / Waste Disposal operation of a large IT company. 
+
+In order to showcase the results, we've also extracted some e-Waste images from the website https://www.alamy.com/
+
+Given the main objective of the project and the methods chosen, we didn't propose the production of output images. On the other hand, we applied dimension reduction techniques and plotted point cloud charts to create a visualization of the features extracted from the images.
 
 ## Images - Examples:
 
@@ -51,7 +55,7 @@ After applying these feature extraction techniques, we used the k-means algorith
 
 Results are discussed in detail in the next section, but clustering and visualizing the point clouds of the main components didn't produce overall good outputs. So we decided to use the extracted features as inputs in Machine Learning classification algorithms for better understanding and interpretation. We used six algorithms (namely Logistic Regression, Multi-Layer Perceptron, Support Vector Machine, Decision Tree, Random Forest and eXtreme Gradient Boosting) in a cross-validation training procedure with 5 Stratified Folds and measured the mean accuracy of each model to proceed with the one with the highest value.
 
-We then trained the best model for each set of features (extracted by the three different methods) and used these models to predict the labels (or classes) of images from a a test dataset and, again, measured not only the overall accuracy of the models, but also the individual accuracy per class.
+We then trained the best model for each set of features (extracted by the three different methods) and used these models to predict the labels (or classes) of images from a test dataset and, again, measured not only the overall accuracy of the models, but also the individual accuracy per class.
 
 The whole procedure of extracting the features, clustering and visualizing their descriptors, as well as training machine learning models to predict the classes of new images, was applied to 4 sets of images, as describred below:
 
@@ -72,20 +76,21 @@ Besides relying on machine learning classification algorithms to explore the ext
 
 To exemplify the outputs produced by the data augmentation and background/foreground segmentation, we can see below the orinal version of a water pump on the top left hand side, the rotated water pump obtained by data augmentation on the top right hand side, the water pump without the image background segmented by the U2-Net on the bottom left hand side and the water pump rotated and segmented on the bottom right hand side.
 
-<img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/waste_images/train/Water%20Pump/Water%20Pump1.JPG" width="200"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/waste_images/train_balanced/Water%20Pump/Water%20Pump1_rotation-range_24.JPG" width="200">
-<img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/waste_images/train_segmented/Water%20Pump/Water%20Pump1_segmented.JPG" width="200"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/waste_images/train_segmented_balanced/Water%20Pump/Water%20Pump1_segmented_rotation-range_24.JPG" width="200">
+<img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/waste_images/train/Water%20Pump/Water%20Pump1.JPG" width="200" height="200"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/waste_images/train_balanced/Water%20Pump/Water%20Pump1_rotation-range_24.JPG" width="200" height="200">
+
+<img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/waste_images/train_segmented/Water%20Pump/Water%20Pump1_segmented.JPG" width="200" height="200"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/waste_images/train_segmented_balanced/Water%20Pump/Water%20Pump1_segmented_rotation-range_24.JPG" width="200" height="200">
 
 Generally speaking, the use of the U2-Net Neural Network produced good object detection and segmentation.
 
 ### Clustering and Multidimensional Projections Visualizations
 
-As mentioned in the previous section, we tested various sizes of clusters in a range from 25 to 1,000. Since many of the extracted descriptors generated hundreds of thousands of data, we decided to apply a random sample from each dataset and then proceed with the clustering in order to facilitate the execution of this step. All combinations of feature extraction methods and datasets presented better results for k=25 clusters. The Silhoutte Scores are displayed in the table below.
+As mentioned in the previous section, we tested various sizes of clusters in a range from 25 to 1,000. Since many of the extracted descriptors generated hundreds of thousands of data, we decided to apply a random sample from each dataset and then proceeded with the clustering in order to facilitate the execution of this step. All combinations of feature extraction methods and datasets presented better results for k=25 clusters. The Silhoutte Scores are displayed in the table below.
 
 #### Silhouette Scores for k=25 clusters:
 |      | 1        | 2        | 3        |4         |
 |------|----------|----------|----------|----------|
 |BRISK |0.029     |0.026     |0.029     |0.027     |
-|GLCM  |0.49      |0.52      |0.51      |0.55      |
+|GLCM  |0.49      |0.53      |0.51      |0.55      |
 |LBP   |-0.01     |0.24      |-0.02     |0.25      |
 
 1 - Imbalanced dataset, including the original images with background</br>
@@ -93,37 +98,37 @@ As mentioned in the previous section, we tested various sizes of clusters in a r
 3 - Balanced dataset, including the original images with background</br>
 4 - Balanced dataset, including the images after background segmentation
 
-Note that GLCM produced the best cluster segmentations, since the closer to one the silhouette score gets, the better. Also, balancing the dataset and segmenting the objects in the images improved the cluster segmentation for GLCM descriptors. Brisk's descriptors cluster segmentation showed to be indifferent to the different image sets. As for the LBP descriptors, the background/foreground segmentation caused great impact in the cluster segmentation.
+Note that GLCM produced the best cluster segmentations, since the closer to one the silhouette score gets, the better. Also, balancing the dataset and segmenting the objects in the images improved the cluster segmentation for GLCM descriptors. Brisk's descriptors cluster segmentation showed to be indifferent to the various image sets. As for the LBP descriptors, the background/foreground segmentation caused great impact in the cluster segmentation.
 
 The following set of images show 2D point cloud charts for the two main components obtained from PCA applied to the descriptors of the three feature extractors used in each image set.
 
 #### PCA two components point cloud for BRISK descriptors applied to the (1) imbalanced without background segmentation, (2) imbalanced with background segmentation, (3) balanced without background segmentation and (4) balanced with background segmentation image sets, respectively
-<img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/PCA_BRISK_normal-data.png" width="250"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/PCA_BRISK_segmented-data.png" width="250"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/PCA_BRISK_balanced-data.png" width="250"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/PCA_BRISK_balanced-segmented-data.png" width="250">
+<img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/PCA_BRISK_normal-data.png" width="250" height="270"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/PCA_BRISK_segmented-data.png" width="250" height="270"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/PCA_BRISK_balanced-data.png" width="250" height="270"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/PCA_BRISK_balanced-segmented-data.png" width="250" height="270">
 
 The charts above show a rough segmentation, as a reflection of the low Silhouette Scores and, also due to the fact that the two main components explain only around 16% of the variance for all the image sets.
 
 #### PCA two components point cloud for GLCM descriptors applied to the (1) imbalanced without background segmentation, (2) imbalanced with background segmentation, (3) balanced without background segmentation and (4) balanced with background segmentation image sets, respectively
-<img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/PCA_GLCM_normal-data.png" width="250"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/PCA_GLCM_segmented-data.png" width="250"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/PCA_GLCM_balanced-data.png" width="250"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/PCA_GLCM_balanced-segmented-data.png" width="250">
+<img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/PCA_GLCM_normal-data.png" width="250" height="260"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/PCA_GLCM_segmented-data.png" width="250" height="260"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/PCA_GLCM_balanced-data.png" width="250" height="260"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/PCA_GLCM_balanced-segmented-data.png" width="250" height="260">
 
 GLCM got better cluster segregation (Silhouette Score near 0.5) and presented an interesting pattern for the descriptors data.
 
 #### PCA two components point cloud for LBP descriptors applied to the (1) imbalanced without background segmentation, (2) imbalanced with background segmentation, (3) balanced without background segmentation and (4) balanced with background segmentation image sets, respectively
-<img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/PCA_LBP_normal-data.png" width="250"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/PCA_LBP_segmented-data.png" width="250"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/PCA_LBP_balanced-data.png" width="250"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/PCA_LBP_balanced-segmented-data.png" width="250">
+<img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/PCA_LBP_normal-data.png" width="250" height="260"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/PCA_LBP_segmented-data.png" width="250" height="260"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/PCA_LBP_balanced-data.png" width="250" height="260"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/PCA_LBP_balanced-segmented-data.png" width="250" height="260">
 
 The pattern of the LBP descriptors data changed after the background segmentation procedure.
 
 #### t-SNE two components point cloud for BRISK descriptors applied to the (1) imbalanced without background segmentation, (2) imbalanced with background segmentation, (3) balanced without background segmentation and (4) balanced with background segmentation image sets, respectively
-<img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/t-SNE_BRISK_normal-data.png" width="230"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/t-SNE_BRISK_segmented-data.png" width="230"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/t-SNE_BRISK_balanced-data.png" width="275"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/t-SNE_BRISK_balanced-segmented-data.png" width="275">
+<img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/t-SNE_BRISK_normal-data.png" width="230" height="240"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/t-SNE_BRISK_segmented-data.png" width="230" height="240"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/t-SNE_BRISK_balanced-data.png" width="230" height="240"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/t-SNE_BRISK_balanced-segmented-data.png" width="230" height="240">
 
 The two components extracted by the t-SNE method didn't provide good visualization of the BRISK descriptors' clusters.
 
 #### t-SNE two components point cloud for GLCM descriptors applied to the (1) imbalanced without background segmentation, (2) imbalanced with background segmentation, (3) balanced without background segmentation and (4) balanced with background segmentation image sets, respectively
-<img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/t-SNE_GLCM_normal-data.png" width="230"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/t-SNE_GLCM_segmented-data.png" width="230"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/t-SNE_GLCM_balanced-data.png" width="275"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/t-SNE_GLCM_balanced-segmented-data.png" width="275">
+<img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/t-SNE_GLCM_normal-data.png" width="230" height="240"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/t-SNE_GLCM_segmented-data.png" width="230" height="240"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/t-SNE_GLCM_balanced-data.png" width="275" height="240"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/t-SNE_GLCM_balanced-segmented-data.png" width="275" height="240">
 
 The GLCM method produced less descriptors to the segmented pictures, that's why we see relatively few points in the chart above. The curious shape also reveals fairly well segmented clusters for all the image sets.
 
 #### t-SNE two components point cloud for LBP descriptors applied to the (1) imbalanced without background segmentation, (2) imbalanced with background segmentation, (3) balanced without background segmentation and (4) balanced with background segmentation image sets, respectively
-<img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/t-SNE_LBP_normal-data.png" width="230"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/t-SNE_LBP_segmented-data.png" width="230"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/t-SNE_LBP_balanced-data.png" width="275"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/t-SNE_LBP_balanced-segmented-data.png" width="275">
+<img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/t-SNE_LBP_normal-data.png" width="230" height="240"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/t-SNE_LBP_segmented-data.png" width="230" height="240"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/t-SNE_LBP_balanced-data.png" width="230" height="240"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/t-SNE_LBP_balanced-segmented-data.png" width="230" height="240">
 
 The two components extracted by the t-SNE method show a clear change the in the data pattern after the application of the background segmentation procedure.
 
@@ -231,18 +236,22 @@ We also present barplots showing the accuracy for each class individually. Note 
 
 ## Final Comments
 
-In this projet we applied three feature extraction methods (GLCM, LBP and BRISK) to a set of eletronic waste images and conducted two tasks: image classification and image retrieval. We also applied data augmentation and object salientation to create new synthetic images to compare the results on both tasks to the ones from the oringal image set. For the classification task we used the extracted features as inputs in several machine learning models and trained this models to predict the classes in new images. The best model/feature combination was Random Forest with LBP for the Original image set (40% accuracy), closely followed by the Logistic Regression with BRISK (38%). In general, highlighting the main object produced an increment in the accuracy, specially for the GLCM. Balancing the image sets increased individual classes accuracy, at the cost of overall accuracy reduction.
+In this projet we applied three feature extraction methods (BRISK, GLCM and LBP) to a set of eletronic waste images and conducted two tasks: image classification and image retrieval. We also applied data augmentation and background segmentation to create new synthetic images and compare the results between the different versions of the image set. For the classification task, we used the extracted features as inputs in several machine learning models and trained this models to predict the classes of new images. The best model/feature combination was Random Forest with LBP for the original image set (40% accuracy), closely followed by Logistic Regression with BRISK (38%). In general, excluding the background produced an increment in the overall accuracy, specially for GLCM. Balancing the image set increased individual classes accuracy, at the cost of overall accuracy reduction.
+
+With regards to the content-based image retrieval experiment, where k-means was the model of choice, we can notice that LBP seems to respond better to background/foreground segmentation by providing a more accurate ranking to samples similar to the query image, when compared to GLCM.
 
 # 5. Descriptions of the roles of the student in the project
 
-José was resposible for...
+Jose Alexandre was resposible for: creation of the different image datasets; creation of the Bag of Visual Words (BOVW) notebooks, including feature extraction procedures; application of the background/foreground segmentation techniques; application of the dataset balance techniques; creation of the content-based image retrieval notebooks; creation of the showcase notebook.
+
 Meanwhile, Gustavo was responsible for: the Clustering and Silhouette Score applications, the Multidimensional Projections and point clouds plotting, the cross-validation training procedure for the machine learning models and writing the final report.
 
 # 6. Demo of the project
 
-Please follow and run the following notebook:
-https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Showcase%20Predictors.ipynb
+Please follow and run the following notebook: [Demo](https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Showcase%20Predictors%20and%20Image%20Retrieval.ipynb)
 
 # 7. Presentation
 
 The video presentation of this project can be viewed at: YouTube link.
+
+# 8. Navigtation Map - Notebooks
