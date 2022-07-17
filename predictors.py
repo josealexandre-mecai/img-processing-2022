@@ -177,7 +177,7 @@ def extract_lbp_features(img, radius=1, sampling_pixels=8):
     Parameters:
         img: image file
         radius: radius of circle (spatial resolution of the operator)
-        sampling_pixels: number of circularly symmetric neighbor set points (quantization of the angular space).
+        sampling_pixels: number of circularly symmetric neighbor set points (quantization of the angular space)
 
     Returns:
         texture features
