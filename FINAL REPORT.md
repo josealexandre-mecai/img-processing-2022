@@ -276,12 +276,12 @@ The video presentation of this project can be viewed at: YouTube link.
 
 [Testing the Bag of Words for image classification: balanced dataset, including the augmented images after background segmentation](https://github.com/josealexandre-mecai/img-processing-2022/blob/main/BOVW_Test_Segmented_Balanced.ipynb)
 
-Training the Bag of Words for image retrieval: imbalanced dataset, including the original images with background
-Training the Bag of Words for image retrieval: imbalanced dataset, including the images after background segmentation
-Training the Bag of Words for image retrieval: balanced dataset, including the augmented images with background
-Training the Bag of Words for image retrieval: balanced dataset, including the augmented images after background segmentation
+[Training the Bag of Words for image retrieval: imbalanced dataset, including the original images with background](https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Image%20Retrieval%20using%20GLCM%20and%20LBP%20-%20Images%20with%20Background%20-%20Imbalanced.ipynb)
 
-Testing the Bag of Words for image retrieval: imbalanced dataset, including the original images with background
-Testing the Bag of Words for image retrieval: imbalanced dataset, including the images after background segmentation
-Testing the Bag of Words for image retrieval: balanced dataset, including the augmented images with background
-Testing the Bag of Words for image retrieval: balanced dataset, including the augmented images after background segmentation
+[Training the Bag of Words for image retrieval: imbalanced dataset, including the images after background segmentation](https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Image%20Retrieval%20using%20GLCM%20and%20LBP%20-%20Images%20without%20Background%20-%20Imbalanced.ipynb)
+
+[Training the Bag of Words for image retrieval: balanced dataset, including the augmented images with background](https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Image%20Retrieval%20using%20GLCM%20and%20LBP%20-%20Images%20with%20Background%20-%20Balanced.ipynb)
+
+[Training the Bag of Words for image retrieval: balanced dataset, including the augmented images after background segmentation](https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Image%20Retrieval%20using%20GLCM%20and%20LBP%20-%20Images%20without%20Background%20-%20Balanced.ipynb)
+
+
