@@ -256,4 +256,5 @@ The video presentation of this project can be viewed at: YouTube link.
 
 # 8. Navigtation Map - Notebooks
 
-1. 
+1.
+2.
