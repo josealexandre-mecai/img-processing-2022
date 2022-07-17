@@ -90,7 +90,7 @@ As mentioned in the previous section, we tested various sizes of clusters in a r
 |      | 1        | 2        | 3        |4         |
 |------|----------|----------|----------|----------|
 |BRISK |0.029     |0.026     |0.029     |0.027     |
-|GLCM  |0.49      |0.53      |0.51      |0.55      |
+|GLCM  |0.49      |0.53      |0.51      |0.54      |
 |LBP   |-0.01     |0.24      |-0.02     |0.25      |
 
 1 - Imbalanced dataset, including the original images with background</br>
