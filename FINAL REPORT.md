@@ -61,8 +61,8 @@ The whole procedure of extracting the features, clustering and visualizing their
 
 1 - Imbalanced dataset, including the original images with background</br>
 2 - Imbalanced dataset, including the images after background segmentation</br>
-3 - Balanced dataset, including the original images with background</br>
-4 - Balanced dataset, including the images after background segmentation
+3 - Balanced dataset, including the augmented images with background</br>
+4 - Balanced dataset, including the augmented images after background segmentation
 
 The balanced dataset was obtained with the application of a data augmentation technique found on the Keras package on TensorFlow platform. With the objective of balancing the number of elements in each class, we created new images by applying small variations, such as width and height changes, 90 degrees rotation, brigthness adjustments and horizontal flip.
 
@@ -95,8 +95,8 @@ As mentioned in the previous section, we tested various sizes of clusters in a r
 
 1 - Imbalanced dataset, including the original images with background</br>
 2 - Imbalanced dataset, including the images after background segmentation</br>
-3 - Balanced dataset, including the original images with background</br>
-4 - Balanced dataset, including the images after background segmentation
+3 - Balanced dataset, including the augmented images with background</br>
+4 - Balanced dataset, including the augmented images after background segmentation
 
 Note that GLCM produced the best cluster segmentations, since the closer to one the silhouette score gets, the better. Also, balancing the dataset and segmenting the objects in the images improved the cluster segmentation for GLCM descriptors. Brisk's descriptors cluster segmentation showed to be indifferent to the various image sets. As for the LBP descriptors, the background/foreground segmentation caused great impact in the cluster segmentation.
 
@@ -191,8 +191,8 @@ BRISK also was less affected by the reduction in the overall accuracy caused by 
 
 1 - Imbalanced dataset, including the original images with background</br>
 2 - Imbalanced dataset, including the images after background segmentation</br>
-3 - Balanced dataset, including the original images with background</br>
-4 - Balanced dataset, including the images after background segmentation
+3 - Balanced dataset, including the augmented images with background</br>
+4 - Balanced dataset, including the augmented images after background segmentation
 
 Now, we present the Confusion Matrixes obtained from the predictions using the machine learing models for each combination of feature extraction method and image set.
 
@@ -242,7 +242,7 @@ With regards to the content-based image retrieval experiment, where k-means was 
 
 # 5. Descriptions of the roles of the student in the project
 
-Jose Alexandre was resposible for: creation of the different image datasets; creation of the Bag of Visual Words (BOVW) notebooks, including feature extraction procedures; application of the background/foreground segmentation techniques; application of the dataset balance techniques; creation of the content-based image retrieval notebooks; creation of the showcase notebook.
+Jose Alexandre was resposible for: creation of the different image datasets; creation of the Bag of Visual Words (BOVW) notebooks, including feature extraction procedures; application of the background/foreground segmentation techniques; application of the dataset balance techniques; creation of the content-based image retrieval notebooks; creation of the showcase notebook (Please notice there are two contributors id referring to Jose's participation: josealexandre-mecai and josealexandrefs, because some commits were done with my global git config from another account).
 
 Meanwhile, Gustavo was responsible for: the Clustering and Silhouette Score applications, the Multidimensional Projections and point clouds plotting, the cross-validation training procedure for the machine learning models and writing the final report.
 
@@ -256,5 +256,32 @@ The video presentation of this project can be viewed at: YouTube link.
 
 # 8. Navigtation Map - Notebooks
 
-1.
-2.
+[Segmentation background-foreground](https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Segmentation%20Background-Foreground.ipynb)
+
+[Dealing with imbalanced dataset](https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Dealing%20with%20imbalanced%20dataset.ipynb)
+
+[Training the Bag of Words for image classification: imbalanced dataset, including the original images with background](https://github.com/josealexandre-mecai/img-processing-2022/blob/main/BOVW_Train.ipynb)
+
+[Training the Bag of Words for image classification: imbalanced dataset, including the images after background segmentation](https://github.com/josealexandre-mecai/img-processing-2022/blob/main/BOVW_Train_Segmented.ipynb)
+
+[Training the Bag of Words for image classification: balanced dataset, including the augmented images with background](https://github.com/josealexandre-mecai/img-processing-2022/blob/main/BOVW_Train_Balanced.ipynb)
+
+[Training the Bag of Words for image classification: balanced dataset, including the augmented images after background segmentation](https://github.com/josealexandre-mecai/img-processing-2022/blob/main/BOVW_Test_Segmented_Balanced.ipynb)
+
+[Testing the Bag of Words for image classification: imbalanced dataset, including the original images with background](https://github.com/josealexandre-mecai/img-processing-2022/blob/main/BOVW_Test.ipynb)
+
+[Testing the Bag of Words for image classification: imbalanced dataset, including the images after background segmentation](https://github.com/josealexandre-mecai/img-processing-2022/blob/main/BOVW_Test_Segmented.ipynb)
+
+[Testing the Bag of Words for image classification: balanced dataset, including the augmented images with background](https://github.com/josealexandre-mecai/img-processing-2022/blob/main/BOVW_Test_Balanced.ipynb)
+
+[Testing the Bag of Words for image classification: balanced dataset, including the augmented images after background segmentation](https://github.com/josealexandre-mecai/img-processing-2022/blob/main/BOVW_Test_Segmented_Balanced.ipynb)
+
+Training the Bag of Words for image retrieval: imbalanced dataset, including the original images with background
+Training the Bag of Words for image retrieval: imbalanced dataset, including the images after background segmentation
+Training the Bag of Words for image retrieval: balanced dataset, including the augmented images with background
+Training the Bag of Words for image retrieval: balanced dataset, including the augmented images after background segmentation
+
+Testing the Bag of Words for image retrieval: imbalanced dataset, including the original images with background
+Testing the Bag of Words for image retrieval: imbalanced dataset, including the images after background segmentation
+Testing the Bag of Words for image retrieval: balanced dataset, including the augmented images with background
+Testing the Bag of Words for image retrieval: balanced dataset, including the augmented images after background segmentation
