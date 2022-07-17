@@ -270,7 +270,7 @@ The video presentation of this project can be viewed at: YouTube link.
 
 [Testing the Bag of Words for image classification: imbalanced dataset, including the original images with background](https://github.com/josealexandre-mecai/img-processing-2022/blob/main/BOVW_Test.ipynb)
 
-[Testing the Bag of Words for image classification: imbalanced dataset, including the images after background segmentation](https://github.com/josealexandre-mecai/img-processing-2022/blob/main/BOVW_Test_Balanced.ipynb)
+[Testing the Bag of Words for image classification: imbalanced dataset, including the images after background segmentation](https://github.com/josealexandre-mecai/img-processing-2022/blob/main/BOVW_Test_Segmented.ipynb)
 
 [Testing the Bag of Words for image classification: balanced dataset, including the augmented images with background](https://github.com/josealexandre-mecai/img-processing-2022/blob/main/BOVW_Test_Balanced.ipynb)
 
