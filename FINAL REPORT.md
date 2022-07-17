@@ -261,13 +261,19 @@ The video presentation of this project can be viewed at: YouTube link.
 [Dealing with imbalanced dataset](https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Dealing%20with%20imbalanced%20dataset.ipynb)
 
 [Training the Bag of Words for image classification: imbalanced dataset, including the original images with background](https://github.com/josealexandre-mecai/img-processing-2022/blob/main/BOVW_Train.ipynb)
+
 [Training the Bag of Words for image classification: imbalanced dataset, including the images after background segmentation](https://github.com/josealexandre-mecai/img-processing-2022/blob/main/BOVW_Train_Segmented.ipynb)
+
 [Training the Bag of Words for image classification: balanced dataset, including the augmented images with background](https://github.com/josealexandre-mecai/img-processing-2022/blob/main/BOVW_Train_Balanced.ipynb)
+
 [Training the Bag of Words for image classification: balanced dataset, including the augmented images after background segmentation](https://github.com/josealexandre-mecai/img-processing-2022/blob/main/BOVW_Test_Segmented_Balanced.ipynb)
 
 [Testing the Bag of Words for image classification: imbalanced dataset, including the original images with background](https://github.com/josealexandre-mecai/img-processing-2022/blob/main/BOVW_Test.ipynb)
+
 [Testing the Bag of Words for image classification: imbalanced dataset, including the images after background segmentation](https://github.com/josealexandre-mecai/img-processing-2022/blob/main/BOVW_Test_Balanced.ipynb)
+
 [Testing the Bag of Words for image classification: balanced dataset, including the augmented images with background](https://github.com/josealexandre-mecai/img-processing-2022/blob/main/BOVW_Test_Balanced.ipynb)
+
 [Testing the Bag of Words for image classification: balanced dataset, including the augmented images after background segmentation](https://github.com/josealexandre-mecai/img-processing-2022/blob/main/BOVW_Test_Segmented_Balanced.ipynb)
 
 Training the Bag of Words for image retrieval: imbalanced dataset, including the original images with background
