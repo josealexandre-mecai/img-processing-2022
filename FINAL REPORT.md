@@ -284,7 +284,7 @@ Please follow and run the following notebook: [Demo](https://github.com/josealex
 
 # 7. Presentation
 
-The video presentation of this project can be viewed at: YouTube link.
+The video presentation of this project can be viewed at: https://youtu.be/J-s4FGYsItA
 
 # 8. Navigtation Map - Notebooks
 
