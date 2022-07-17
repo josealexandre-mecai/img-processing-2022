@@ -178,7 +178,7 @@ The four tables below present the mean accuracy results of the 5-fold cross-vali
 
 ### Image Features used as input in Machine Learning - Training Results
 
-Next, we present the results of the overall accuracy for the predictions made by the models and highglight in __bold__ the best results for each image set. The Random Forest model fed by the features extracted by the LBP extractir got the best overall accuracy for the original image set. BRISK features got the best overall accuracy for the other image sets, using Logistic Regression for the option 1 and Random Forest for the options 2, 3 and 4.
+Next, we present the results of the overall accuracy for the predictions made by the models and highglight in __bold__ the best results for each image set. The Random Forest model fed by the features extracted by the LBP extractor got the best overall accuracy for the original image set. BRISK features got the best overall accuracy for the other image sets, using Logistic Regression for the option 1 and Random Forest for the options 2, 3 and 4.
 
 BRISK also was less affected by the reduction in the overall accuracy caused by the processing of balancing the classes in the dataset. Segmenting the object from the background produced great increase in the GLCM accuracy.
 
