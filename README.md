@@ -74,7 +74,7 @@ Besides relying on machine learning classification algorithms to explore the ext
 
 # 4. Obtained Results and Discussion
 
-To exemplify the outputs produced by the data augmentation and background/foreground segmentation, we can see below the orinal version of a water pump on the top left hand side, the rotated water pump obtained by data augmentation on the top right hand side, the water pump without the image background segmented by the U2-Net on the bottom left hand side and the water pump rotated and segmented on the bottom right hand side.
+To exemplify the outputs produced by the data augmentation and background/foreground segmentation, we can see below the original version of a water pump on the top left hand side, the rotated water pump obtained by data augmentation on the top right hand side, the water pump without the image background segmented by the U2-Net on the bottom left hand side and the water pump rotated and segmented on the bottom right hand side.
 
 <img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/waste_images/train/Water%20Pump/Water%20Pump1.JPG" width="200" height="200"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/waste_images/train_balanced/Water%20Pump/Water%20Pump1_rotation-range_24.JPG" width="200" height="200">
 
@@ -196,19 +196,19 @@ BRISK also was less affected by the reduction in the overall accuracy caused by 
 
 Now, we present the Confusion Matrixes obtained from the predictions using the machine learing models for each combination of feature extraction method and image set.
 
-#### BRISK features Confusion Matrix for the (1) imbalanced without background segmentation and (2) imbalanced with background segmentation image sets
+#### BRISK features Confusion Matrix for the (1) imbalanced without background segmentation and (2) imbalanced with background segmentation image sets, respectively
 <img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/CM_BRISK_original-data.png" width="400"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/CM_BRISK_segmented-data.png" width="400">
 
 #### BRISK features Confusion Matrix for the (3) balanced without background segmentation and (4) balanced with background segmentation image sets, respectively
 <img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/CM_BRISK_balanced-data.png" width="400"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/CM_BRISK_balanced-segmented-data.png" width="400">
 
-#### GLCM features Confusion Matrix for the (1) imbalanced without background segmentation and (2) imbalanced with background segmentation image sets
+#### GLCM features Confusion Matrix for the (1) imbalanced without background segmentation and (2) imbalanced with background segmentation image sets, respectively
 <img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/CM_GLCM_original-data.png" width="400"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/CM_GLCM_segmented-data.png" width="400">
 
 #### GLCM features Confusion Matrix for the (3) balanced without background segmentation and (4) balanced with background segmentation image sets, respectively
 <img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/CM_GLCM_balanced-data.png" width="400"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/CM_GLCM_balanced-segmented-data.png" width="400">
 
-#### LBP features Confusion Matrix for the (1) imbalanced without background segmentation and (2) imbalanced with background segmentation image sets
+#### LBP features Confusion Matrix for the (1) imbalanced without background segmentation and (2) imbalanced with background segmentation image sets, respectively
 <img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/CM_LBP_original-data.png" width="400"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/CM_LBP_segmented-data.png" width="400">
 
 #### LBP features Confusion Matrix for the (3) balanced without background segmentation and (4) balanced with background segmentation image sets, respectively
@@ -216,19 +216,19 @@ Now, we present the Confusion Matrixes obtained from the predictions using the m
 
 We also present barplots showing the accuracy for each class individually. Note how balancing the datasets raises the individual classes accuracy.
 
-#### BRISK features individual accuracy for the (1) imbalanced without background segmentation and (2) imbalanced with background segmentation image sets
+#### BRISK features individual accuracy for the (1) imbalanced without background segmentation and (2) imbalanced with background segmentation image sets, respectively
 <img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/class_acc_BRISK_original-data.png" width="400"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/class_acc_BRISK_segmented-data.png" width="400">
 
 #### BRISK features individual accuracy for the (3) balanced without background segmentation and (4) balanced with background segmentation image sets, respectively
 <img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/class_acc_BRISK_balanced-data.png" width="400"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/class_acc_BRISK_balanced-segmented-data.png" width="400">
 
-#### GLCM features individual accuracy for the (1) imbalanced without background segmentation and (2) imbalanced with background segmentation image sets
+#### GLCM features individual accuracy for the (1) imbalanced without background segmentation and (2) imbalanced with background segmentation image sets, respectively
 <img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/class_acc_GLCM_original-data.png" width="400"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/class_acc_GLCM_segmented-data.png" width="400">
 
 #### GLCM features individual accuracy for the (3) balanced without background segmentation and (4) balanced with background segmentation image sets, respectively
 <img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/class_acc_GLCM_balanced-data.png" width="400"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/class_acc_GLCM_balanced-segmented-data.png" width="400">
 
-#### LBP features individual accuracy for the (1) imbalanced without background segmentation and (2) imbalanced with background segmentation image sets
+#### LBP features individual accuracy for the (1) imbalanced without background segmentation and (2) imbalanced with background segmentation image sets, respectively
 <img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/class_acc_LBP_original-data.png" width="400"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/class_acc_LBP_segmented-data.png" width="400">
 
 #### LBP features individual accuracy for the (3) balanced without background segmentation and (4) balanced with background segmentation image sets, respectively
@@ -255,3 +255,6 @@ Please follow and run the following notebook: [Demo](https://github.com/josealex
 The video presentation of this project can be viewed at: YouTube link.
 
 # 8. Navigtation Map - Notebooks
+
+1.
+2.
