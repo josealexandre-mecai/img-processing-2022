@@ -74,7 +74,7 @@ Besides relying on machine learning classification algorithms to explore the ext
 
 # 4. Obtained Results and Discussion
 
-To exemplify the outputs produced by the data augmentation and background/foreground segmentation, we can see below the orinal version of a water pump on the top left hand side, the rotated water pump obtained by data augmentation on the top right hand side, the water pump without the image background segmented by the U2-Net on the bottom left hand side and the water pump rotated and segmented on the bottom right hand side.
+To exemplify the outputs produced by the data augmentation and background/foreground segmentation, we can see below the original version of a water pump on the top left hand side, the rotated water pump obtained by data augmentation on the top right hand side, the water pump without the image background segmented by the U2-Net on the bottom left hand side and the water pump rotated and segmented on the bottom right hand side.
 
 <img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/waste_images/train/Water%20Pump/Water%20Pump1.JPG" width="200" height="200"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/waste_images/train_balanced/Water%20Pump/Water%20Pump1_rotation-range_24.JPG" width="200" height="200">
 
