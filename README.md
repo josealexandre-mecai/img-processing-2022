@@ -55,9 +55,9 @@ We then trained the best model for each set of features (extracted by the three 
 
 The whole procedure of extracting the features, clustering and visualizing their descriptors, as well as training machine learning models to predict the classes of new images, was applied to 4 sets of images, as describred below:
 
-1 - Imbalanced dataset, including the original images with background
-2 - Imbalanced dataset, including the images after background segmentation
-3 - Balanced dataset, including the original images with background
+1 - Imbalanced dataset, including the original images with background</br>
+2 - Imbalanced dataset, including the images after background segmentation</br>
+3 - Balanced dataset, including the original images with background</br>
 4 - Balanced dataset, including the images after background segmentation
 
 The balanced dataset was obtained with the application of a data augmentation technique found on the Keras package on TensorFlow platform. With the objective of balancing the number of elements in each class, we created new images by applying small variations, such as width and height changes, 90 degrees rotation, brigthness adjustments and horizontal flip.
@@ -88,50 +88,50 @@ As mentioned in the previous section, we tested various sizes of clusters in a r
 |GLCM  |0.49      |0.52      |0.51      |0.55      |
 |LBP   |-0.01     |0.24      |-0.02     |0.25      |
 
-1 - Imbalanced dataset, including the original images with background
-2 - Imbalanced dataset, including the images after background segmentation
-3 - Balanced dataset, including the original images with background
+1 - Imbalanced dataset, including the original images with background</br>
+2 - Imbalanced dataset, including the images after background segmentation</br>
+3 - Balanced dataset, including the original images with background</br>
 4 - Balanced dataset, including the images after background segmentation
 
-Note that GLCM produced the best cluster segmentations, since the closer to one the silhouette score gets, the better. Also, balancing the dataset and segmenting the objects in the images improved the cluster segmentation for GLCM descriptors. Brisk's descriptors cluster segmentation showed to be indifferent to the image set. As for the LBP descriptors, the background/foreground segmentation caused great impact in the cluster segmentation.
+Note that GLCM produced the best cluster segmentations, since the closer to one the silhouette score gets, the better. Also, balancing the dataset and segmenting the objects in the images improved the cluster segmentation for GLCM descriptors. Brisk's descriptors cluster segmentation showed to be indifferent to the different image sets. As for the LBP descriptors, the background/foreground segmentation caused great impact in the cluster segmentation.
 
-The following set of images show 2D point cloud charts for the two main components obtained from PCA applied to the descriptors obtained from the three feature extractors applied over each images set.
+The following set of images show 2D point cloud charts for the two main components obtained from PCA applied to the descriptors of the three feature extractors used in each image set.
 
-#### PCA two components point cloud for BRISK descriptors applied to the original, balanced, segmented and balanced-segmented image sets, respectively
-<img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/PCA_BRISK_normal-data.png" width="250"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/PCA_BRISK_balanced-data.png" width="250"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/PCA_BRISK_segmented-data.png" width="250"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/PCA_BRISK_balanced-segmented-data.png" width="250">
+#### PCA two components point cloud for BRISK descriptors applied to the (1) imbalanced without background segmentation, (2) imbalanced with background segmentation, (3) balanced without background segmentation and (4) balanced with background segmentation image sets, respectively
+<img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/PCA_BRISK_normal-data.png" width="250"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/PCA_BRISK_segmented-data.png" width="250"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/PCA_BRISK_balanced-data.png" width="250"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/PCA_BRISK_balanced-segmented-data.png" width="250">
 
-The charts above show a coarse segmentation, as a reflection of the low Silhouette Scores and, also from the fact that the two main components explain only around 16% of the variance for all the image sets.
+The charts above show a rough segmentation, as a reflection of the low Silhouette Scores and, also due to the fact that the two main components explain only around 16% of the variance for all the image sets.
 
-#### PCA two components point cloud for GLCM descriptors applied to the original, balanced, segmented and balanced-segmented image sets, respectively
-<img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/PCA_GLCM_normal-data.png" width="250"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/PCA_GLCM_balanced-data.png" width="250"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/PCA_GLCM_segmented-data.png" width="250"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/PCA_GLCM_balanced-segmented-data.png" width="250">
+#### PCA two components point cloud for GLCM descriptors applied to the (1) imbalanced without background segmentation, (2) imbalanced with background segmentation, (3) balanced without background segmentation and (4) balanced with background segmentation image sets, respectively
+<img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/PCA_GLCM_normal-data.png" width="250"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/PCA_GLCM_segmented-data.png" width="250"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/PCA_GLCM_balanced-data.png" width="250"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/PCA_GLCM_balanced-segmented-data.png" width="250">
 
 GLCM got better cluster segregation (Silhouette Score near 0.5) and presented an interesting pattern for the descriptors data.
 
-#### PCA two components point cloud for LBP descriptors applied to the original, balanced, segmented and balanced-segmented image sets, respectively
-<img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/PCA_LBP_normal-data.png" width="250"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/PCA_LBP_balanced-data.png" width="250"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/PCA_LBP_segmented-data.png" width="250"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/PCA_LBP_balanced-segmented-data.png" width="250">
+#### PCA two components point cloud for LBP descriptors applied to the (1) imbalanced without background segmentation, (2) imbalanced with background segmentation, (3) balanced without background segmentation and (4) balanced with background segmentation image sets, respectively
+<img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/PCA_LBP_normal-data.png" width="250"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/PCA_LBP_segmented-data.png" width="250"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/PCA_LBP_balanced-data.png" width="250"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/PCA_LBP_balanced-segmented-data.png" width="250">
 
-The pattern of the LBP descriptors data changed after the object highlighting procedure.
+The pattern of the LBP descriptors data changed after the background segmentation procedure.
 
-#### t-SNE two components point cloud for BRISK descriptors applied to the original, balanced, segmented and balanced-segmented image sets, respectively
-<img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/t-SNE_BRISK_normal-data.png" width="230"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/t-SNE_BRISK_balanced-data.png" width="230"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/t-SNE_BRISK_segmented-data.png" width="275"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/t-SNE_BRISK_balanced-segmented-data.png" width="275">
+#### t-SNE two components point cloud for BRISK descriptors applied to the (1) imbalanced without background segmentation, (2) imbalanced with background segmentation, (3) balanced without background segmentation and (4) balanced with background segmentation image sets, respectively
+<img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/t-SNE_BRISK_normal-data.png" width="230"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/t-SNE_BRISK_segmented-data.png" width="230"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/t-SNE_BRISK_balanced-data.png" width="275"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/t-SNE_BRISK_balanced-segmented-data.png" width="275">
 
-The two components extracted by the t-SNE method didn't provide good visualization of the BRISJ descriptors' clusters.
+The two components extracted by the t-SNE method didn't provide good visualization of the BRISK descriptors' clusters.
 
-#### t-SNE two components point cloud for GLCM descriptors applied to the original, balanced, segmented and balanced-segmented image sets, respectively
-<img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/t-SNE_GLCM_normal-data.png" width="230"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/t-SNE_GLCM_balanced-data.png" width="230"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/t-SNE_GLCM_segmented-data.png" width="275"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/t-SNE_GLCM_balanced-segmented-data.png" width="275">
+#### t-SNE two components point cloud for GLCM descriptors applied to the (1) imbalanced without background segmentation, (2) imbalanced with background segmentation, (3) balanced without background segmentation and (4) balanced with background segmentation image sets, respectively
+<img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/t-SNE_GLCM_normal-data.png" width="230"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/t-SNE_GLCM_segmented-data.png" width="230"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/t-SNE_GLCM_balanced-data.png" width="275"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/t-SNE_GLCM_balanced-segmented-data.png" width="275">
 
 The GLCM method produced less descriptors to the segmented pictures, that's why we see relatively few points in the chart above. The curious shape also reveals fairly well segmented clusters for all the image sets.
 
-#### t-SNE two components point cloud for LBP descriptors applied to the original, balanced, segmented and balanced-segmented image sets, respectively
-<img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/t-SNE_LBP_normal-data.png" width="230"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/t-SNE_LBP_balanced-data.png" width="230"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/t-SNE_LBP_segmented-data.png" width="275"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/t-SNE_LBP_balanced-segmented-data.png" width="275">
+#### t-SNE two components point cloud for LBP descriptors applied to the (1) imbalanced without background segmentation, (2) imbalanced with background segmentation, (3) balanced without background segmentation and (4) balanced with background segmentation image sets, respectively
+<img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/t-SNE_LBP_normal-data.png" width="230"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/t-SNE_LBP_segmented-data.png" width="230"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/t-SNE_LBP_balanced-data.png" width="275"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/t-SNE_LBP_balanced-segmented-data.png" width="275">
 
-The two components extracted by the t-SNE method show a clear change the in the data pattern after applying the object hightlighting procedure.
+The two components extracted by the t-SNE method show a clear change the in the data pattern after the application of the background segmentation procedure.
 
 ### Image Features used as input in Machine Learning - Training Results
 
-The four tables below present the mean accuracy results of the 5-fold cross-validation training. The best model for each feature extraction method is highlighted in __bold__. Random Forest is the algorithm that most frequently produced better results, with 8 models being selected. We also have one Logistic Regression, one Support Vector Machines, one Decision Tree and one eXtreme Gradient Boosting. These selected models were used to train the datasets and then were used to predict the classes of a new set of un-seen images.
+The four tables below present the mean accuracy results of the 5-fold cross-validation training. The best model for each feature extraction method is highlighted in __bold__. Random Forest is the algorithm that most frequently produced better results, with 8 models being selected. We also have one Logistic Regression, one Support Vector Machines, one Decision Tree and one eXtreme Gradient Boosting. These selected models were used to train the datasets and then were used to predict the classes of a new set of unseen images.
 
-#### Original image set         
+#### 1 - Imbalanced dataset, including the original images with background        
 |Model   | BRISK    | GLCM     | LBP      |
 |--------|----------|----------|----------|
 |Logistic|__0.3965__|0.3080    |0.3486    |
@@ -141,17 +141,7 @@ The four tables below present the mean accuracy results of the 5-fold cross-vali
 |Rand For|0.3929    |0.3062    |__0.3650__|
 |XGBoost |0.3858    |0.2973    |0.3486    |
 
-#### Balanced image set         
-|Model   | BRISK    | GLCM     | LBP      |
-|--------|----------|----------|----------|
-|Logistic|0.2546    |0.1103    |0.1606    |
-|MLP     |0.2626    |0.1183    |0.1255    |
-|SVM     |0.1603    |0.1082    |0.1070    |
-|Dec Tree|0.1804    |0.1063    |0.1502    |
-|Rand For|__0.2826__|__0.1323__|__0.1852__|
-|XGBoost |0.2547    |0.1162    |0.1461    |
-
-#### Segmented image set         
+#### 2 - Imbalanced dataset, including the images after background segmentation            
 |Model   | BRISK    | GLCM     | LBP      |
 |--------|----------|----------|----------|
 |Logistic|0.3681    |0.2761    |0.2793    |
@@ -161,7 +151,17 @@ The four tables below present the mean accuracy results of the 5-fold cross-vali
 |Rand For|__0.4000__|0.2779    |__0.3230__|
 |XGBoost |0.3912    |0.2761    |0.2573    |
 
-#### Balanced and Segmented image set         
+3 - Balanced dataset, including the original images with background
+|Model   | BRISK    | GLCM     | LBP      |
+|--------|----------|----------|----------|
+|Logistic|0.2547    |0.1103    |0.1606    |
+|MLP     |0.2626    |0.1183    |0.1255    |
+|SVM     |0.1603    |0.1082    |0.1070    |
+|Dec Tree|0.1804    |0.1063    |0.1502    |
+|Rand For|__0.2826__|__0.1323__|__0.1852__|
+|XGBoost |0.2547    |0.1162    |0.1461    |
+
+#### 4 - Balanced dataset, including the images after background segmentation        
 |Model   | BRISK    | GLCM     | LBP      |
 |--------|----------|----------|----------|
 |Logistic|0.2426    |0.1062    |0.1550    |
@@ -173,56 +173,61 @@ The four tables below present the mean accuracy results of the 5-fold cross-vali
 
 ### Image Features used as input in Machine Learning - Training Results
 
-Next we present the results of the overall accuracy for the predictions made by the models and highglight in __bold__ the best results for each image set. The Random Forest model fed by the features extracted by the LBP got the best overall accuracy for the Original image set. BRISK features got the best overall accuracy for the Balanced, Segmented and Balanced/Segmented image sets, using the Random Forest model for them all.
+Next, we present the results of the overall accuracy for the predictions made by the models and highglight in __bold__ the best results for each image set. The Random Forest model fed by the features extracted by the LBP extractir got the best overall accuracy for the original image set. BRISK features got the best overall accuracy for the other image sets, using Logistic Regression for the option 1 and Random Forest for the options 2, 3 and 4.
 
-BRISK is the method that showed overall best accuracy results considering all the image sets. It also was the less affected by the reduction in the accuracy caused by the class balancing. Segmenting the object from the background produced great increase in the GLCM accuracy.
+BRISK also was less affected by the reduction in the overall accuracy caused by the processing of balancing the classes in the dataset. Segmenting the object from the background produced great increase in the GLCM accuracy.
 
 #### Predictions accuracy in the test dataset
-|      |Original  |Balanced  |Segmented |Balanc+Seg|
+|      |1         |2         |3         |4         |
 |------|----------|----------|----------|----------|
-|BRISK |0.38      |__0.27__  |__0.40__  |__0.30__  |
-|GLCM  |0.28      |0.16      |0.37      |0.11      |
-|LBP   |__0.40__  |0.21      |0.36      |0.20      |
+|BRISK |0.38      |__0.40__  |__0.27__  |__0.30__  |
+|GLCM  |0.28      |0.37      |0.16      |0.11      |
+|LBP   |__0.40__  |0.36      |0.21      |0.20      |
 
-Now we present the Confusion Matrixes obtained from the predictions using the machine learing models for each combination of feature extraction method and image set.
+1 - Imbalanced dataset, including the original images with background</br>
+2 - Imbalanced dataset, including the images after background segmentation</br>
+3 - Balanced dataset, including the original images with background</br>
+4 - Balanced dataset, including the images after background segmentation
 
-#### BRISK features Confusion Matrix for the Original and Balanced image sets.
-<img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/CM_BRISK_original-data.png" width="400"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/CM_BRISK_balanced-data.png" width="400">
+Now, we present the Confusion Matrixes obtained from the predictions using the machine learing models for each combination of feature extraction method and image set.
 
-#### BRISK features Confusion Matrix for the Segmented and Balanced-Segmented image sets.
-<img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/CM_BRISK_segmented-data.png" width="400"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/CM_BRISK_balanced-segmented-data.png" width="400">
+#### BRISK features Confusion Matrix for the (1) imbalanced without background segmentation and (2) imbalanced with background segmentation image sets
+<img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/CM_BRISK_original-data.png" width="400"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/CM_BRISK_segmented-data.png" width="400">
 
-#### GLCM features Confusion Matrix for the Original and Balanced image sets.
-<img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/CM_GLCM_original-data.png" width="400"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/CM_GLCM_balanced-data.png" width="400">
+#### BRISK features Confusion Matrix for the (3) balanced without background segmentation and (4) balanced with background segmentation image sets, respectively
+<img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/CM_BRISK_balanced-data.png" width="400"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/CM_BRISK_balanced-segmented-data.png" width="400">
 
-#### GLCM features Confusion Matrix for the Segmented and Balanced-Segmented image sets.
-<img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/CM_GLCM_segmented-data.png" width="400"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/CM_GLCM_balanced-segmented-data.png" width="400">
+#### GLCM features Confusion Matrix for the (1) imbalanced without background segmentation and (2) imbalanced with background segmentation image sets
+<img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/CM_GLCM_original-data.png" width="400"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/CM_GLCM_segmented-data.png" width="400">
 
-#### LBP features Confusion Matrix for the Original and Balanced image sets.
-<img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/CM_LBP_original-data.png" width="400"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/CM_LBP_balanced-data.png" width="400">
+#### GLCM features Confusion Matrix for the (3) balanced without background segmentation and (4) balanced with background segmentation image sets, respectively
+<img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/CM_GLCM_balanced-data.png" width="400"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/CM_GLCM_balanced-segmented-data.png" width="400">
 
-#### LBP features Confusion Matrix for the Segmented and Balanced-Segmented image sets.
-<img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/CM_LBP_segmented-data.png" width="400"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/CM_LBP_balanced-segmented-data.png" width="400">
+#### LBP features Confusion Matrix for the (1) imbalanced without background segmentation and (2) imbalanced with background segmentation image sets
+<img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/CM_LBP_original-data.png" width="400"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/CM_LBP_segmented-data.png" width="400">
+
+#### LBP features Confusion Matrix for the (3) balanced without background segmentation and (4) balanced with background segmentation image sets, respectively
+<img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/CM_LBP_balanced-data.png" width="400"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/CM_LBP_balanced-segmented-data.png" width="400">
 
 We also present barplots showing the accuracy for each class individually. Note how balancing the datasets raises the individual classes accuracy.
 
-#### BRISK features individual accuracy for the Original and Balanced image sets.
-<img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/class_acc_BRISK_original-data.png" width="400"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/class_acc_BRISK_balanced-data.png" width="400">
+#### BRISK features individual accuracy for the (1) imbalanced without background segmentation and (2) imbalanced with background segmentation image sets
+<img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/class_acc_BRISK_original-data.png" width="400"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/class_acc_BRISK_segmented-data.png" width="400">
 
-#### BRISK features individual accuracy for the Segmented and Balanced-Segmented image sets.
-<img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/class_acc_BRISK_segmented-data.png" width="400"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/class_acc_BRISK_balanced-segmented-data.png" width="400">
+#### BRISK features individual accuracy for the (3) balanced without background segmentation and (4) balanced with background segmentation image sets, respectively
+<img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/class_acc_BRISK_balanced-data.png" width="400"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/class_acc_BRISK_balanced-segmented-data.png" width="400">
 
-#### GLCM features individual accuracy for the Original and Balanced image sets.
-<img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/class_acc_GLCM_original-data.png" width="400"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/class_acc_GLCM_balanced-data.png" width="400">
+#### GLCM features individual accuracy for the (1) imbalanced without background segmentation and (2) imbalanced with background segmentation image sets
+<img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/class_acc_GLCM_original-data.png" width="400"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/class_acc_GLCM_segmented-data.png" width="400">
 
-#### GLCM features individual accuracy for the Segmented and Balanced-Segmented image sets.
-<img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/class_acc_GLCM_segmented-data.png" width="400"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/class_acc_GLCM_balanced-segmented-data.png" width="400">
+#### GLCM features individual accuracy for the (3) balanced without background segmentation and (4) balanced with background segmentation image sets, respectively
+<img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/class_acc_GLCM_balanced-data.png" width="400"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/class_acc_GLCM_balanced-segmented-data.png" width="400">
 
-#### LBP features individual accuracy for the Original and Balanced image sets.
-<img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/class_acc_LBP_original-data.png" width="400"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/class_acc_LBP_balanced-data.png" width="400">
+#### LBP features individual accuracy for the (1) imbalanced without background segmentation and (2) imbalanced with background segmentation image sets
+<img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/class_acc_LBP_original-data.png" width="400"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/class_acc_LBP_segmented-data.png" width="400">
 
-#### LBP features individual accuracy for the Segmented and Balanced-Segmented image sets.
-<img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/class_acc_LBP_segmented-data.png" width="400"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/class_acc_LBP_segmented-data.png" width="400">
+#### LBP features individual accuracy for the (3) balanced without background segmentation and (4) balanced with background segmentation image sets, respectively
+<img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/class_acc_LBP_balanced-data.png" width="400"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/class_acc_LBP_balanced-segmented-data.png" width="400">
 
 ## Final Comments
 
