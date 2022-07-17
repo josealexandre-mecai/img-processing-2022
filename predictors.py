@@ -4,8 +4,9 @@ import pandas as pd
 import os
 import joblib as jb
 
-# Importing Image class from PIL package
-from PIL import Image
+# Importing display from IPython package
+from IPython.display import Image
+#from PIL import Image
 
 # Importing metrics tools
 from sklearn.metrics import confusion_matrix, accuracy_score, ConfusionMatrixDisplay
@@ -15,7 +16,7 @@ import seaborn as sn
 import matplotlib.pyplot as plt
 import pylab as pl
 import matplotlib.colors as mcolors
-from IPython.display import Image
+
 
 # Perform k-means clustering and vector quantization
 from scipy.cluster.vq import kmeans, vq
@@ -26,7 +27,6 @@ import mahotas as mt # Mahotas library for GLCM calculation
 from skimage import feature # feature.local_binary_pattern for LBP calculation
 
 # BRISK - Feature Point Predictor
-
 def brisk_predictor(image_path, option):
 
     # Read the image
@@ -286,7 +286,6 @@ def predict(im_path, opt):
     print("Probabilities LBP: \n", prob_lbp, "\n")
 
     prob_graph(prob_brisk, prob_glcm, prob_lbp)
-
 
 # Using the special variable __name__
 #if __name__ == "__main__":
