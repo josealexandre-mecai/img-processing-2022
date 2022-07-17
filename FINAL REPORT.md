@@ -264,19 +264,21 @@ We also present barplots showing the accuracy for each class individually. Note 
 #### LBP features individual accuracy for the (3) balanced without background segmentation and (4) balanced with background segmentation image sets, respectively
 <img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/class_acc_LBP_balanced-data.png" width="400"><img src="https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Final%20Report%20Images/class_acc_LBP_balanced-segmented-data.png" width="400">
 
-## Final Comments
+## Final Comments and Main Findings
 
-In this projet we applied three feature extraction methods (BRISK, GLCM and LBP) to a set of eletronic waste images and conducted two tasks: image classification and image retrieval. We also applied data augmentation and background segmentation to create new synthetic images and compare the results between the different versions of the image set. For the classification task, we used the extracted features as inputs in several machine learning models and trained these models to predict the classes of new images. The best model/feature combination was Random Forest with LBP for the original image set (40% accuracy), closely followed by Logistic Regression with BRISK (38%). In general, excluding the background produced an increment in the overall accuracy, specially for GLCM. Balancing the image set increased individual classes accuracy, at the cost of overall accuracy reduction.
+In this projet we applied three feature extraction methods (BRISK, GLCM and LBP) to a set of eletronic waste images and conducted two tasks: image classification and image retrieval. We also applied data augmentation and background segmentation to create new synthetic images and compare the results between the different versions of the image set. For the classification task, we used the extracted features as inputs in several machine learning models and trained these models to predict the classes of new images. The best model/feature combination was Random Forest with LBP for the original image set (40% accuracy), closely followed by Logistic Regression with BRISK (38%). 
 
-With regards to the content-based image retrieval experiment, where k-means was the model of choice, we can notice that LBP seems to respond better to background/foreground segmentation by providing a more accurate ranking to samples similar to the query image, when compared to GLCM.
+In general, we've learned that the background/foreground segmentation produced an increment in the overall accuracy, specially for GLCM when considering an imbalanced dataset. On the other hand, balancing the image set increased individual classes accuracy, at the cost of overall accuracy reduction.
 
-# 5. Descriptions of the roles of the student in the project
+With regards to the content-based image retrieval experiment, where k-means was the model of choice, we can notice that LBP seems to respond better to background/foreground segmentation by providing a more accurate ranking to samples similar to the query image, when compared to GLCM's results.
+
+# 5. Descriptions of the Roles of the Students
 
 Jose Alexandre was resposible for: creation of the different image datasets; creation of the Bag of Visual Words (BOVW) notebooks, including feature extraction procedures; application of the background/foreground segmentation techniques; application of the dataset balance techniques; creation of the content-based image retrieval notebooks; creation of the showcase notebook (Please notice there are two contributors id referring to Jose's participation: josealexandre-mecai and josealexandrefs, because some commits were done with my global git config from another account).
 
 Meanwhile, Gustavo was responsible for: the Clustering and Silhouette Score applications, the Multidimensional Projections and point clouds plotting, the cross-validation training procedure for the machine learning models and writing the final report.
 
-# 6. Demo of the project
+# 6. Demo of the Project
 
 Please follow and run the following notebook: [Demo](https://github.com/josealexandre-mecai/img-processing-2022/blob/main/Showcase%20Predictors%20and%20Image%20Retrieval.ipynb)
 
