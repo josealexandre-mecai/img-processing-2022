@@ -1,24 +1,29 @@
-import cv2
 import numpy as np
 import os
 from os import listdir # to list files in a folder
 import joblib as jb
+from joblib import Parallel, delayed # to execute function in parallel
 import glob
-import mahotas as mt
 
-import matplotlib.pyplot as plt
-
+# Image processing
 import imageio
 from imageio import imread
-
-# Importing display from IPython package
 from IPython.display import Image
+import cv2
 
+# Importing feature extraction tools
 from sklearn.feature_extraction.image import extract_patches_2d
-from sklearn.decomposition import PCA
-from sklearn.cluster import KMeans
-from joblib import Parallel, delayed # to execute function in parallel
 from skimage import feature
+import mahotas as mt
+
+# Importing projection tools
+from sklearn.decomposition import PCA
+
+# Perform k-means
+from sklearn.cluster import KMeans
+
+# Importing visualization tools
+import matplotlib.pyplot as plt
 
 
 def get_patches(img_file, random_state, patch_size=(11, 11), n_patches=250):

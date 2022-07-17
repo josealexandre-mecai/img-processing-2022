@@ -1,12 +1,11 @@
-import cv2
 import numpy as np
 import pandas as pd
 import os
 import joblib as jb
 
-# Importing display from IPython package
+# Image processing
 from IPython.display import Image
-#from PIL import Image
+import cv2
 
 # Importing metrics tools
 from sklearn.metrics import confusion_matrix, accuracy_score, ConfusionMatrixDisplay
@@ -16,7 +15,6 @@ import seaborn as sn
 import matplotlib.pyplot as plt
 import pylab as pl
 import matplotlib.colors as mcolors
-
 
 # Perform k-means clustering and vector quantization
 from scipy.cluster.vq import kmeans, vq
